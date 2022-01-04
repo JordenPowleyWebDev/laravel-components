@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('laravel-components_table', function (Blueprint $table) {
+        Schema::create('laravel_components_table', function (Blueprint $table) {
             $table->id();
 
             // add fields

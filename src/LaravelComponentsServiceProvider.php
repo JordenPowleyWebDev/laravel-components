@@ -3,13 +3,16 @@
 namespace JordenPowleyWebDev\LaravelComponents;
 
 use Illuminate\Support\Facades\Blade;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Alert;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use JordenPowleyWebDev\LaravelComponents\Commands\LaravelComponentsCommand;
 
 class LaravelComponentsServiceProvider extends PackageServiceProvider
 {
+    /** @var string */
+    private const PATH_VIEWS = __DIR__.'/../resources/views';
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -18,19 +21,23 @@ class LaravelComponentsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-components')
+            ->name('components')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-components_table')
-            ->hasCommand(LaravelComponentsCommand::class);
-
-//        $this->loadViewComponentsAs('laravelcomponents', [
-//            Alert::class,
-//        ]);
+            ->hasViews('components');
+//            ->hasMigration('create_laravel_components_table')
+//            ->hasCommand(LaravelComponentsCommand::class);
     }
 
     public function boot()
     {
-        Blade::componentNamespace('LaravelComponents\\Views\\Components', 'laravelcomponents');
+        $this->loadViewsFrom(self::PATH_VIEWS, 'components');
+
+//        $this->loadViewComponentsAs('laravel-components', [
+//            Test::class,
+//        ]);
+
+        Blade::componentNamespace('JordenPowleyWebDev\\LaravelComponents\\View\\Components', 'components');
+
+//        Blade::componentNamespace('JordenPowleyWebDev\\LaravelComponents\\View\\Components', 'components');
     }
 }
