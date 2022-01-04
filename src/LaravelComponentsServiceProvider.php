@@ -2,42 +2,39 @@
 
 namespace JordenPowleyWebDev\LaravelComponents;
 
-use Illuminate\Support\Facades\Blade;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use JordenPowleyWebDev\LaravelComponents\Commands\LaravelComponentsCommand;
+use Illuminate\Support\ServiceProvider;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Alert;
 
-class LaravelComponentsServiceProvider extends PackageServiceProvider
+class LaravelComponentsServiceProvider extends ServiceProvider
 {
-    /** @var string */
-    private const PATH_VIEWS = __DIR__.'/../resources/views';
-
-    public function configurePackage(Package $package): void
+    /**
+     * LaravelComponentsServiceProvider::register()
+     */
+    public function register()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('components')
-            ->hasConfigFile()
-            ->hasViews('components');
-//            ->hasMigration('create_laravel_components_table')
-//            ->hasCommand(LaravelComponentsCommand::class);
+        // Merge in the package config
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-components.php', 'laravel-components');
     }
 
+    /**
+     * LaravelComponentsServiceProvider::boot()
+     */
     public function boot()
     {
-        $this->loadViewsFrom(self::PATH_VIEWS, 'components');
+        if ($this->app->runningInConsole()) {
+            // Make config available to the app
+            $this->publishes([
+                __DIR__.'/../config/laravel-components.php' => config_path('laravel-components.php'),
+            ], 'config');
+        }
 
-//        $this->loadViewComponentsAs('laravel-components', [
-//            Test::class,
-//        ]);
+        // Load in View Components
+        $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
+            Alert::class,
+        ]);
 
-        Blade::componentNamespace('JordenPowleyWebDev\\LaravelComponents\\View\\Components', 'components');
-
-//        Blade::componentNamespace('JordenPowleyWebDev\\LaravelComponents\\View\\Components', 'components');
+        // Register the views for the package
+        $viewsNamespace = config('laravel-components.views-namespace');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', $viewsNamespace);
     }
 }

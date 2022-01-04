@@ -1,3 +1,3 @@
 <div>
-    Test Here NEW
+    Test Component
 </div>
