@@ -59,7 +59,7 @@ class Button extends Component
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'icon', 'label'] as $item) {
-            $this->classes[$item] = config('components.default-classes.components.button.'.$item);
+            $this->classes[$item] = config('laravel-components.default-classes.components.button.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -79,8 +79,9 @@ class Button extends Component
         switch ($this->type) {
             case self::TYPES['HREF']:
                 return view('laravel-components::components.buttons.href', [
-                    "href"  => $this->options['href'] ?? "",
-                    "icon"  => $icon,
+                    "href"      => $this->options['href'] ?? "",
+                    "target"    => $this->options['target'] ?? null,
+                    "icon"      => $icon,
                 ]);
             case self::TYPES['MODAL']:
                 return view('laravel-components::components.buttons.modal', [
