@@ -3775,11 +3775,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
-/**
- * Button::BUTTON_TYPES
- * @type {{SUBMIT: string, HREF: string, ON_CLICK: string, MODAL: string}}
- */
-
 
 
 var BUTTON_TYPES = {
@@ -3793,9 +3788,24 @@ var Button = function Button(props) {
   var type = props.type,
       label = props.label,
       _props$classes = props.classes,
-      classes = _props$classes === void 0 ? [] : _props$classes,
+      classes = _props$classes === void 0 ? {} : _props$classes,
       _props$options = props.options,
       options = _props$options === void 0 ? null : _props$options;
+  var nodes = ['container', 'icon', 'label'];
+  var defaultClasses = {
+    container: "btn px-4 font-weight-bold",
+    icon: "mr-2",
+    label: ""
+  };
+  var processedClasses = {};
+  nodes.forEach(function (node) {
+    var itemClass = "laravel-components-" + node;
+    processedClasses[node] = itemClass + " " + defaultClasses[node];
+
+    if (!!classes && !!classes[node]) {
+      processedClasses[node] += " " + classes[node];
+    }
+  });
 
   var renderIcon = function renderIcon() {
     var icon = !!options && !!options.icon ? options.icon : null;
@@ -3805,7 +3815,7 @@ var Button = function Button(props) {
     }
 
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-      className: classes.icon + " " + icon
+      className: processedClasses.icon + " " + icon
     });
   };
 
@@ -3813,9 +3823,9 @@ var Button = function Button(props) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
       href: href,
       target: target,
-      className: classes.container,
+      className: processedClasses.container,
       children: [renderIcon(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: classes.label,
+        className: processedClasses.label,
         children: label
       })]
     });
@@ -3824,9 +3834,9 @@ var Button = function Button(props) {
   var renderModalButton = function renderModalButton(modal) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
       onClick: jQuery('#' + modal).modal('show'),
-      className: classes.container,
+      className: processedClasses.container,
       children: [renderIcon(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: "classes.label",
+        className: processedClasses.label,
         children: label
       })]
     });
@@ -3835,10 +3845,10 @@ var Button = function Button(props) {
   var renderOnClickButton = function renderOnClickButton(onClick) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
       type: "button",
-      className: classes.container,
+      className: processedClasses.container,
       onClick: onClick,
       children: [renderIcon(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: classes.label,
+        className: processedClasses.label,
         children: label
       })]
     });
@@ -3847,10 +3857,10 @@ var Button = function Button(props) {
   var renderSubmitButton = function renderSubmitButton(form) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
       type: "submit",
-      className: classes.container,
+      className: processedClasses.container,
       form: form,
       children: [renderIcon(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: classes.label,
+        className: processedClasses.label,
         children: label
       })]
     });

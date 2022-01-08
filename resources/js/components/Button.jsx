@@ -1,9 +1,5 @@
 import React from 'react';
 
-/**
- * Button::BUTTON_TYPES
- * @type {{SUBMIT: string, HREF: string, ON_CLICK: string, MODAL: string}}
- */
 const BUTTON_TYPES = {
     SUBMIT:     "submit",
     HREF:       "href",
@@ -15,9 +11,26 @@ const Button = (props) => {
     const {
         type,
         label,
-        classes = [],
+        classes = {},
         options = null,
     } = props;
+
+    const nodes = ['container', 'icon', 'label'];
+    const defaultClasses = {
+        container:  "btn px-4 font-weight-bold",
+        icon:       "mr-2",
+        label:      "",
+    }
+
+    const processedClasses = {};
+    nodes.forEach((node) => {
+        let itemClass = "laravel-components-"+node;
+        processedClasses[node] = itemClass+" "+defaultClasses[node];
+
+        if (!!classes && !!classes[node]) {
+            processedClasses[node] += " "+classes[node];
+        }
+    });
 
     const renderIcon = () => {
         let icon = !!options && !!options.icon ? options.icon : null;
@@ -27,7 +40,7 @@ const Button = (props) => {
         }
 
         return (
-            <i className={classes.icon+" "+icon} />
+            <i className={processedClasses.icon+" "+icon} />
         )
     }
 
@@ -35,10 +48,10 @@ const Button = (props) => {
         <a
             href={href}
             target={target}
-            className={classes.container}
+            className={processedClasses.container}
         >
             {renderIcon()}
-            <span className={classes.label}>
+            <span className={processedClasses.label}>
                 {label}
             </span>
         </a>
@@ -47,10 +60,10 @@ const Button = (props) => {
     const renderModalButton = (modal) => (
         <button
             onClick={jQuery('#'+modal).modal('show')}
-            className={classes.container}
+            className={processedClasses.container}
         >
             {renderIcon()}
-            <span className="classes.label">
+            <span className={processedClasses.label}>
                 {label}
             </span>
         </button>
@@ -59,11 +72,11 @@ const Button = (props) => {
     const renderOnClickButton = (onClick) => (
         <button
             type="button"
-            className={classes.container}
+            className={processedClasses.container}
             onClick={onClick}
         >
             {renderIcon()}
-            <span className={classes.label}>
+            <span className={processedClasses.label}>
                 {label}
             </span>
         </button>
@@ -72,11 +85,11 @@ const Button = (props) => {
     const renderSubmitButton = (form) => (
         <button
             type="submit"
-            className={classes.container}
+            className={processedClasses.container}
             form={form}
         >
             {renderIcon()}
-            <span className={classes.label}>
+            <span className={processedClasses.label}>
                 {label}
             </span>
         </button>
