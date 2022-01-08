@@ -28,12 +28,6 @@ class LaravelComponentsServiceProvider extends ServiceProvider
                 __DIR__.'/../config/laravel-components.php' => config_path('laravel-components.php'),
             ], 'config');
 
-            // Make Frontend Files Available To The App
-            $this->publishes([
-                __DIR__.'/../resources/scss' => base_path('resources/vendor/laravel-components/scss'),
-                __DIR__.'/../resources/js' => base_path('resources/vendor/laravel-components/js'),
-            ], 'frontend');
-
             // Make SCSS Files Available To The App
             $this->publishes([
                 __DIR__.'/../resources/scss' => base_path('resources/vendor/laravel-components/scss'),
@@ -48,6 +42,13 @@ class LaravelComponentsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../resources/views' => base_path('resources/vendor/laravel-components/views'),
             ], 'views');
+
+            // Make Frontend Files Available To The App
+            $this->publishes([
+                __DIR__.'/../resources/scss' => base_path('resources/vendor/laravel-components/scss'),
+                __DIR__.'/../resources/js' => base_path('resources/vendor/laravel-components/js'),
+                __DIR__.'/../resources/views' => base_path('resources/vendor/laravel-components/views'),
+            ], 'frontend');
         }
 
         // Load in View Components
