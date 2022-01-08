@@ -30,19 +30,24 @@ class LaravelComponentsServiceProvider extends ServiceProvider
 
             // Make Frontend Files Available To The App
             $this->publishes([
-                __DIR__.'/../resources/scss' => base_path('resources/laravel-components/scss'),
-                __DIR__.'/../resources/js' => base_path('resources/laravel-components/js'),
-            ], 'assets');
+                __DIR__.'/../resources/scss' => base_path('resources/vendor/laravel-components/scss'),
+                __DIR__.'/../resources/js' => base_path('resources/vendor/laravel-components/js'),
+            ], 'frontend');
 
             // Make SCSS Files Available To The App
             $this->publishes([
-                __DIR__.'/../resources/scss' => base_path('resources/laravel-components/scss'),
+                __DIR__.'/../resources/scss' => base_path('resources/vendor/laravel-components/scss'),
             ], 'scss');
 
             // Make JS Files Available To The App
             $this->publishes([
-                __DIR__.'/../resources/js' => base_path('resources/laravel-components/js'),
+                __DIR__.'/../resources/js' => base_path('resources/vendor/laravel-components/js'),
             ], 'js');
+
+            // Make Blade Files Available To The App
+            $this->publishes([
+                __DIR__.'/../resources/views' => base_path('resources/vendor/laravel-components/views'),
+            ], 'views');
         }
 
         // Load in View Components
