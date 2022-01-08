@@ -1,5 +1,4 @@
 # Buttons
-[Back](readme.md)
 
 ## Blade Component Usage
 All buttons can be imported using the following syntax
