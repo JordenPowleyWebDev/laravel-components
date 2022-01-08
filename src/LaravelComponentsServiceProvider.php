@@ -3,7 +3,8 @@
 namespace JordenPowleyWebDev\LaravelComponents;
 
 use Illuminate\Support\ServiceProvider;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Alert;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Button;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
 {
@@ -30,7 +31,8 @@ class LaravelComponentsServiceProvider extends ServiceProvider
 
         // Load in View Components
         $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
-            Alert::class,
+            Test::class,
+            Button::class,
         ]);
 
         // Register the views for the package

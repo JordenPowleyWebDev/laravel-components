@@ -1,3 +1,3 @@
 <div>
-    Test Component
+    <div class="h1">{{ $message }}</div>
 </div>
