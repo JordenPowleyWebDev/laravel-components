@@ -23,10 +23,26 @@ class LaravelComponentsServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            // Make config available to the app
+            // Make Config File Available To The App
             $this->publishes([
                 __DIR__.'/../config/laravel-components.php' => config_path('laravel-components.php'),
             ], 'config');
+
+            // Make Frontend Files Available To The App
+            $this->publishes([
+                __DIR__.'/../resources/scss' => base_path('resources/laravel-components/scss'),
+                __DIR__.'/../resources/js' => base_path('resources/laravel-components/js'),
+            ], 'assets');
+
+            // Make SCSS Files Available To The App
+            $this->publishes([
+                __DIR__.'/../resources/scss' => base_path('resources/laravel-components/scss'),
+            ], 'scss');
+
+            // Make JS Files Available To The App
+            $this->publishes([
+                __DIR__.'/../resources/js' => base_path('resources/laravel-components/js'),
+            ], 'js');
         }
 
         // Load in View Components
