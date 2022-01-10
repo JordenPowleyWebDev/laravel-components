@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Layout;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -10,10 +10,10 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 /**
- * Class Card
+ * Divider Card
  * @package JordenPowleyWebDev\LaravelComponents\View\Components\Layout
  */
-class Card extends Component
+class Divider extends Component
 {
     /**
      * @var array|null
@@ -21,7 +21,7 @@ class Card extends Component
     public ?array $classes;
 
     /**
-     * Card::__construct()
+     * Divider::__construct()
      *
      * @param array $classes
      */
@@ -40,7 +40,7 @@ class Card extends Component
     }
 
     /**
-     * Card::render()
+     * Divider::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
