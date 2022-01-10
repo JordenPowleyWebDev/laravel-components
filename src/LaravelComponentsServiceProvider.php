@@ -58,7 +58,10 @@ class LaravelComponentsServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
             Test::class,
             Button::class,
+        ]);
 
+        // Load Layout Views
+        $this->loadViewComponentsAs(config('laravel-components.views-namespace').'-layout', [
             Card::class,
             CardData::class,
             CardHeader::class,
