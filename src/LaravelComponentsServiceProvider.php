@@ -7,6 +7,10 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\Button;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Card;
 use JordenPowleyWebDev\LaravelComponents\View\Components\CardData;
 use JordenPowleyWebDev\LaravelComponents\View\Components\CardHeader;
+use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownDivider;
+use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownItem;
+use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownMenu;
+use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownToggle;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
@@ -58,9 +62,15 @@ class LaravelComponentsServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
             Test::class,
             Button::class,
+
             Card::class,
             CardData::class,
             CardHeader::class,
+
+            DropdownMenu::class,
+            DropdownToggle::class,
+            DropdownItem::class,
+            DropdownDivider::class,
         ]);
 
         // Load Layout Views

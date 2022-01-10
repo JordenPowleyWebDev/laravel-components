@@ -47,7 +47,7 @@ class CardHeader extends Component
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'column', 'label', 'value'] as $item) {
+        foreach (['container', 'title'] as $item) {
             $itemClass = config('laravel-components.views-namespace')."-layout-card-header-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card-header.'.$item);
 
