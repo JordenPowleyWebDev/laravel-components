@@ -30,7 +30,7 @@ class Card extends Component
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'inner'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-card-".$item;
+            $itemClass = config('laravel-components.views-namespace')."-layout-card-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
