@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Layout;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -8,10 +8,13 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use function config;
+use function filled;
+use function view;
 
 /**
  * Class CardHeader
- * @package JordenPowleyWebDev\LaravelComponents\View\Components\Layout
+ * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
 class CardHeader extends Component
 {

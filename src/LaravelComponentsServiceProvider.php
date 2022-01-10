@@ -4,9 +4,9 @@ namespace JordenPowleyWebDev\LaravelComponents;
 
 use Illuminate\Support\ServiceProvider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Button;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\Card;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\CardData;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\CardHeader;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Card;
+use JordenPowleyWebDev\LaravelComponents\View\Components\CardData;
+use JordenPowleyWebDev\LaravelComponents\View\Components\CardHeader;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
@@ -58,14 +58,17 @@ class LaravelComponentsServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
             Test::class,
             Button::class,
-        ]);
-
-        // Load Layout Views
-        $this->loadViewComponentsAs(config('laravel-components.views-namespace').'-layout', [
             Card::class,
             CardData::class,
             CardHeader::class,
         ]);
+
+        // Load Layout Views
+//        $this->loadViewComponentsAs(config('laravel-components.views-namespace').'-layout', [
+//            Card::class,
+//            CardData::class,
+//            CardHeader::class,
+//        ]);
 
         // Register the views for the package
         $viewsNamespace = config('laravel-components.views-namespace');

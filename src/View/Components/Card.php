@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -8,12 +8,15 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use function config;
+use function filled;
+use function view;
 
 /**
- * Class Menu
- * @package JordenPowleyWebDev\LaravelComponents\View\Components\Layout
+ * Class Card
+ * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class Menu extends Component
+class Card extends Component
 {
     /**
      * @var array|null
@@ -21,7 +24,7 @@ class Menu extends Component
     public ?array $classes;
 
     /**
-     * Menu::__construct()
+     * Card::__construct()
      *
      * @param array $classes
      */
@@ -30,7 +33,7 @@ class Menu extends Component
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'inner'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-card-".$item;
+            $itemClass = config('laravel-components.views-namespace')."-layout-card-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
@@ -40,7 +43,7 @@ class Menu extends Component
     }
 
     /**
-     * Menu::render()
+     * Card::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
