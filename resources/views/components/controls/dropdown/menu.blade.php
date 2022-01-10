@@ -1,15 +1,14 @@
-<div class="dropdown">
-
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="cardHeaderDropdownMenuButton"
+<div class="{{ $classes['container'] }}">
+    <button class="{{ $classes['toggle'] }}" type="button" id="{{ $id }}"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{ __('components/admin/controls.menu') }}
+        {{ $label }}
     </button>
-    <div class="dropdown-menu" aria-labelledby="cardHeaderDropdownMenuButton">
+    <div class="{{ $classes['menu'] }}" aria-labelledby="{{ $id }}">
         @foreach($controls as $control)
             @if(array_key_exists("divider", $control))
-                <div class="dropdown-divider"></div>
+                {{-- TODO - Import Dropdown Divider --}}
             @else
-                <a class="dropdown-item {{ $control['style'] }}" href="{{ $control['link'] }}">{{ $control['label'] }}</a>
+                {{-- TODO - Import Dropdown Divider --}}
             @endif
         @endforeach
     </div>

@@ -12,9 +12,6 @@ return [
             ],
             'controls'      => [
                 'dropdown'      => [
-                    'toggle'        => [
-                        'container'     => 'btn btn-secondary dropdown-toggle',
-                    ],
                     'item'          => [
                         'container'     => 'dropdown-item',
                     ],
@@ -22,8 +19,9 @@ return [
                         'container'     => 'dropdown-divider'
                     ],
                     'menu'          => [
-                        'container'     => 'd-flex justify-content-between align-items-center mb-3',
-                        'title'         => 'h2 m-0 p-0',
+                        'container'     => 'dropdown',
+                        'toggle'        => 'btn btn-secondary dropdown-toggle',
+                        'menu'          => 'dropdown-menu',
                     ],
                 ],
             ],

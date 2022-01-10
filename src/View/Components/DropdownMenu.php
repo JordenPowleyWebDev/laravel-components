@@ -19,6 +19,16 @@ use function view;
 class DropdownMenu extends Component
 {
     /**
+     * @var string
+     */
+    public string $label;
+
+    /**
+     * @var string
+     */
+    public string $id;
+
+    /**
      * @var array|null
      */
     public ?array $classes;
@@ -26,10 +36,15 @@ class DropdownMenu extends Component
     /**
      * DropdownMenu::__construct()
      *
+     * @param string $label
+     * @param string $id
      * @param array $classes
      */
-    public function __construct(array $classes = [])
+    public function __construct(string $label, string $id, array $classes = [])
     {
+        $this->label    = $label;
+        $this->id       = $id;
+
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'inner'] as $item) {
