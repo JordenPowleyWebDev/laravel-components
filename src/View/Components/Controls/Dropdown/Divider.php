@@ -29,9 +29,9 @@ class Divider extends Component
     {
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'inner'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-card-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card.'.$item);
+        foreach (['container'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-controls-dropdown-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.controls.dropdown.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -46,6 +46,6 @@ class Divider extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.layout.card.card');
+        return view('laravel-components::components.controls.dropdown.divider');
     }
 }

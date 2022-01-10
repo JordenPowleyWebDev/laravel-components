@@ -38,7 +38,7 @@ class CardData extends Component
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'column', 'label', 'value'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-card-data-".$item;
+            $itemClass = config('laravel-components.views-namespace')."-layout-card-data-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card-data.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
