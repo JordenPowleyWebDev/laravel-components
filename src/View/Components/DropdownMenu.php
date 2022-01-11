@@ -47,7 +47,7 @@ class DropdownMenu extends Component
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'inner'] as $item) {
+        foreach (['container', 'inner', 'toggle', 'menu'] as $item) {
             $itemClass = config('laravel-components.views-namespace')."-controls-dropdown-menu-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.controls.dropdown.menu.'.$item);
 
