@@ -26,11 +26,6 @@ class CardHeader extends Component
     /**
      * @var array|null
      */
-    public ?array $controls = null;
-
-    /**
-     * @var array|null
-     */
     public ?array $classes = null;
 
     /**
@@ -40,10 +35,9 @@ class CardHeader extends Component
      * @param array $controls
      * @param array $classes
      */
-    public function __construct(string $title = null, array $controls = [], array $classes = [])
+    public function __construct(string $title = null, array $classes = [])
     {
-        $this->title    = filled($title) ? $title : $this->title;
-        $this->controls = (filled($controls) && (sizeof($controls) > 0)) ? $controls : $this->controls;
+        $this->title = filled($title) ? $title : $this->title;
 
         // Construct the classes for the components
         $this->classes = [];

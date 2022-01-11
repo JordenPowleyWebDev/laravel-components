@@ -4,12 +4,6 @@
         {{ $label }}
     </button>
     <div class="{{ $classes['menu'] }}" aria-labelledby="{{ $id }}">
-        @foreach($controls as $control)
-            @if(array_key_exists("divider", $control))
-                {{-- TODO - Import Dropdown Divider --}}
-            @else
-                {{-- TODO - Import Dropdown Divider --}}
-            @endif
-        @endforeach
+        {{ $slot }}
     </div>
 </div>
