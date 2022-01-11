@@ -1,8 +1,8 @@
 # Buttons
 
 ## Blade Component Usage
-All buttons can be imported using the following syntax
-```
+All buttons can be imported using the following syntax.
+```html
 <x-laravel-components-button
     type="$type"
     label="$label"

@@ -6,7 +6,7 @@ return [
     'default-classes'   => [
         'components'        => [
             'button'            => [
-                'container'         => 'btn px-4 font-weight-bold',
+                'container'         => 'btn px-4 fw-bold',
                 'icon'              => 'mr-2',
                 'label'             => '',
             ],
@@ -20,7 +20,7 @@ return [
                     ],
                     'menu'          => [
                         'container'     => 'dropdown',
-                        'toggle'        => 'btn btn-secondary dropdown-toggle',
+                        'toggle'        => 'btn btn-secondary fw-bold dropdown-toggle',
                         'menu'          => 'dropdown-menu',
                     ],
                 ],
@@ -37,7 +37,7 @@ return [
                 'card-data'     => [
                     'container'     => 'row mb-3',
                     'column'        => 'col-12 col-md-4 col-lg-3 mb-3',
-                    'label'         => 'font-weight-bold text-dark',
+                    'label'         => 'fw-bold text-dark',
                     'value'         => '',
                 ],
             ]

@@ -79,23 +79,23 @@ class Button extends Component
 
         switch ($this->type) {
             case self::TYPES['HREF']:
-                return view('laravel-components::components.buttons.href', [
+                return view('laravel-components::components.controls.buttons.href', [
                     "href"      => $this->options['href'] ?? "",
                     "target"    => $this->options['target'] ?? null,
                     "icon"      => $icon,
                 ]);
             case self::TYPES['MODAL']:
-                return view('laravel-components::components.buttons.modal', [
+                return view('laravel-components::components.controls.buttons.modal', [
                     "modal" => $this->options['modal'] ?? "",
                     "icon"  => $icon,
                 ]);
             case self::TYPES['ON_CLICK']:
-                return view('laravel-components::components.buttons.onclick', [
+                return view('laravel-components::components.controls.buttons.onclick', [
                     "onClick"   => $this->options['on_click'] ?? "",
                     "icon"      => $icon,
                 ]);
             case self::TYPES['SUBMIT']:
-                return view('laravel-components::components.buttons.submit', [
+                return view('laravel-components::components.controls.buttons.submit', [
                     "form"  => $this->options['form'] ?? null,
                     "icon"  => $icon,
                 ]);

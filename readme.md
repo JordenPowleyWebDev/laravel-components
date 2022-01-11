@@ -18,6 +18,8 @@ using the following syntax:
 
 ### Available Components
 
-| Component | Docs                             |
-|-----------|----------------------------------|
-| Button    | [Blade Buttons](docs/buttons.md) |
+| Component | Docs                                        |
+|-----------|---------------------------------------------|
+| Button    | [Blade Buttons](docs/controls/buttons.md)   |
+| Card      | [Blade Card](docs/layout/card.md)           |
+| Dropdown  | [Blade Dropdown](docs/controls/dropdown.md) |
