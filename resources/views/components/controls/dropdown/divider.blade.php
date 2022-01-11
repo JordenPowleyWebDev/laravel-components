@@ -1,1 +1,3 @@
-<div class="{{ $classes['container'] }}"></div>
+<li>
+    <hr class="{{ $classes['container'] }}" />
+</li>
