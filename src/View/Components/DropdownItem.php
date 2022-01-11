@@ -34,16 +34,23 @@ class DropdownItem extends Component
     public ?array $classes;
 
     /**
+     * @var array|null
+     */
+    public ?array $options;
+
+    /**
      * DropdownItem::__construct()
      *
      * @param string $label
      * @param string $href
      * @param array $classes
+     * @param array|null $options
      */
-    public function __construct(string $label, string $href, array $classes = [])
+    public function __construct(string $label, string $href, array $classes = [], array $options = null)
     {
         $this->label    = $label;
         $this->href     = $href;
+        $this->options  = $options;
 
         // Construct the classes for the components
         $this->classes = [];
@@ -64,6 +71,8 @@ class DropdownItem extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.controls.dropdown.item');
+        return view('laravel-components::components.controls.dropdown.item', [
+            "target"    => $this->options['target'] ?? null,
+        ]);
     }
 }
