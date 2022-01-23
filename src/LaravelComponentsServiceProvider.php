@@ -10,7 +10,14 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\CardHeader;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownDivider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownItem;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownMenu;
+use JordenPowleyWebDev\LaravelComponents\View\Components\File;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormError;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormInput;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormLabel;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Input;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Select;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Textarea;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
 {
@@ -69,6 +76,14 @@ class LaravelComponentsServiceProvider extends ServiceProvider
             DropdownMenu::class,
             DropdownItem::class,
             DropdownDivider::class,
+
+            Input::class,
+            Select::class,
+            File::class,
+            Textarea::class,
+            FormLabel::class,
+            FormError::class,
+            FormInput::class,
         ]);
 
         // Load Layout Views

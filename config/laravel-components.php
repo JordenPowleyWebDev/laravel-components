@@ -40,6 +40,41 @@ return [
                     'label'         => 'fw-bold text-dark',
                     'value'         => '',
                 ],
+            ],
+            'form'          => [
+                'form-input'    => [
+                    'container'         => 'form-group',
+                    'description'       => 'w-100 mb-2',
+                    'input-container'   => 'position-relative',
+                ],
+                'label'         => [
+                    'container'     => 'mb-1 user-select-none',
+                ],
+                'inputs'        => [
+                    'input'   => [
+                        'container'     => 'form-control shadow-none',
+                        'invalid'       => 'is-invalid',
+                    ],
+                    'select'        => [
+                        'container'     => 'form-control shadow-none',
+                        'invalid'       => 'is-invalid',
+                    ],
+                    'file'          => [
+                        'container'         => 'file-input',
+                        'input'             => 'm-0 px-2',
+                        'label-container'   => 'm-0 p-1 px-3 rounded btn btn-secondary',
+                        'label-icon'        => 'mr-2',
+                        'label-text'        => '',
+
+                    ],
+                    'textarea'      => [
+                        'container'     => 'form-control shadow-none',
+                        'invalid'       => 'is-invalid',
+                    ],
+                ],
+                'error'         => [
+                    'container'     => 'invalid-feedback d-block'
+                ],
             ]
         ],
     ],
