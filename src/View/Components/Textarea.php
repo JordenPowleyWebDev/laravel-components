@@ -78,6 +78,6 @@ class Textarea extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.form.inputs.textarea');
+        return view('laravel-components::components.forms.inputs.textarea');
     }
 }

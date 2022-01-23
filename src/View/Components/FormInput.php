@@ -103,6 +103,6 @@ class FormInput extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.form.form-input');
+        return view('laravel-components::components.forms.form-input');
     }
 }

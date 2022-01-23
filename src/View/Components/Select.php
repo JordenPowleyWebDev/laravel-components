@@ -85,6 +85,6 @@ class Select extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.form.inputs.select');
+        return view('laravel-components::components.forms.inputs.select');
     }
 }

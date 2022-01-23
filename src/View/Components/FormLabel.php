@@ -82,6 +82,6 @@ class FormLabel extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.form.label');
+        return view('laravel-components::components.forms.label');
     }
 }

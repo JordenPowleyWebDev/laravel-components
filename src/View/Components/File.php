@@ -71,6 +71,6 @@ class File extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.form.inputs.file');
+        return view('laravel-components::components.forms.inputs.file');
     }
 }
