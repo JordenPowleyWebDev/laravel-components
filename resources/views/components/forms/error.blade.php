@@ -1,3 +1,3 @@
 <span class="{{ $classes['container'] }}" role="alert">
-    <strong>{{ $message }}</strong>
+    <strong>{{ $error }}</strong>
 </span>

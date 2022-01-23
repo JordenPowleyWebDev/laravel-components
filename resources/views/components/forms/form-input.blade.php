@@ -18,25 +18,25 @@
             <x-input
                 :name="{{ $name ?? "" }}"
                 :value="{{ $value ?? "" }}"
-                :options="{{ $options ?? [] }}"
                 :required="{{ $required ?? false }}"
-                :classes="{{ array_key_exists('input-component', $classes) && filled($classes['input-component']) ? $classes['input-component'] : [] }}"
-                :attributes="{{ array_key_exists('input-attributes', $inputAttributes) && filled($inputAttributes['input-attributes']) ? $attributes['input-attributes'] : [] }}"
+                :options="{{ array_key_exists('options', $inputAttributes) && filled($inputAttributes['options']) ? $inputAttributes['options'] : [] }}"
+                :classes="{{ array_key_exists('classes', $inputAttributes) && filled($inputAttributes['classes']) ? $inputAttributes['classes'] : [] }}"
+                :attributes="{{ array_key_exists('attributes', $inputAttributes) && filled($inputAttributes['attributes']) ? $inputAttributes['attributes'] : [] }}"
             />
         @elseif (isset($type) && filled($type) && $type === "file")
             <x-file
                 :name="{{ $name ?? "" }}"
-                :required="{{ $required ?? false }}"
-                :classes="{{ array_key_exists('input-component', $classes) && filled($classes['input-component']) ? $classes['input-component'] : [] }}"
-                :attributes="{{ array_key_exists('input-attributes', $inputAttributes) && filled($inputAttributes['input-attributes']) ? $attributes['input-attributes'] : [] }}"
+                :button="{{ array_key_exists('button', $inputAttributes) && filled($inputAttributes['button']) ? $inputAttributes['button'] : [] }}"
+                :classes="{{ array_key_exists('classes', $inputAttributes) && filled($inputAttributes['classes']) ? $inputAttributes['classes'] : [] }}"
+                :attributes="{{ array_key_exists('attributes', $inputAttributes) && filled($inputAttributes['attributes']) ? $inputAttributes['attributes'] : [] }}"
             />
         @elseif (isset($type) && filled($type) && $type === "textarea")
             <x-textarea
                 :name="{{ $name ?? "" }}"
                 :value="{{ $value ?? "" }}"
                 :required="{{ $required ?? false }}"
-                :classes="{{ array_key_exists('input-component', $classes) && filled($classes['input-component']) ? $classes['input-component'] : [] }}"
-                :attributes="{{ array_key_exists('input-attributes', $inputAttributes) && filled($inputAttributes['input-attributes']) ? $attributes['input-attributes'] : [] }}"
+                :classes="{{ array_key_exists('classes', $inputAttributes) && filled($inputAttributes['classes']) ? $inputAttributes['classes'] : [] }}"
+                :attributes="{{ array_key_exists('attributes', $inputAttributes) && filled($inputAttributes['attributes']) ? $inputAttributes['attributes'] : [] }}"
             />
         @elseif (isset($type) && filled($type) && $type === "date")
             {{-- TODO - Include Date Input React Component --}}
@@ -50,16 +50,16 @@
             <x-input
                 :name="{{ $name ?? "" }}"
                 :value="{{ $value ?? "" }}"
-                :type="{{ $type ?? "text" }}"
                 :required="{{ $required ?? false }}"
-                :classes="{{ array_key_exists('input-component', $classes) && filled($classes['input-component']) ? $classes['input-component'] : [] }}"
-                :attributes="{{ array_key_exists('input-attributes', $inputAttributes) && filled($inputAttributes['input-attributes']) ? $attributes['input-attributes'] : [] }}"
+                :type="{{ $type ?? "text" }}"
+                :classes="{{ array_key_exists('classes', $inputAttributes) && filled($inputAttributes['classes']) ? $inputAttributes['classes'] : [] }}"
+                :attributes="{{ array_key_exists('attributes', $inputAttributes) && filled($inputAttributes['attributes']) ? $inputAttributes['attributes'] : [] }}"
             />
         @endif
     </div>
     @error($name)
         <x-form-error
-            :message="{{ $message }}"
+            :error="{{ $message }}"
             :classes="{{ $classes['error-component'] }}"
         />
     @enderror

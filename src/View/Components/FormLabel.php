@@ -21,12 +21,12 @@ class FormLabel extends Component
     /**
      * @var string
      */
-    public string $label;
+    public string $name;
 
     /**
      * @var string
      */
-    public string $name;
+    public string $label;
 
     /**
      * @var bool
@@ -46,16 +46,16 @@ class FormLabel extends Component
     /**
      * FormLabel::__construct()
      *
-     * @param string $label
      * @param string $name
-     * @param string $type
+     * @param string $label
      * @param bool $required
+     * @param string $type
      * @param array $classes
      */
-    public function __construct(string $label, string $name, string $type = 'text', bool $required = false, array $classes = [])
+    public function __construct(string $name, string $label, bool $required = false, string $type = 'text', array $classes = [])
     {
-        $this->label    = $label;
         $this->name     = $name;
+        $this->label    = $label;
         $this->required = $required;
         $this->type     = $type;
 

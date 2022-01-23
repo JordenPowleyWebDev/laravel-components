@@ -21,7 +21,7 @@ class FormError extends Component
     /**
      * @var string
      */
-    public string $message;
+    public string $error;
 
     /**
      * @var array|null
@@ -31,12 +31,12 @@ class FormError extends Component
     /**
      * FormError::__construct()
      *
-     * @param string $message
+     * @param string $error
      * @param array $classes
      */
-    public function __construct(string $message, array $classes = [])
+    public function __construct(string $error, array $classes = [])
     {
-        $this->message = $message;
+        $this->error = $error;
 
         // Construct the classes for the components
         $this->classes = [];

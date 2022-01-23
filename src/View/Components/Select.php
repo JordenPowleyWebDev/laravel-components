@@ -29,14 +29,14 @@ class Select extends Component
     public string $value;
 
     /**
-     * @var array
-     */
-    public array $options;
-
-    /**
      * @var bool
      */
     public bool $required;
+
+    /**
+     * @var array
+     */
+    public array $options;
 
     /**
      * @var array
@@ -53,17 +53,17 @@ class Select extends Component
      *
      * @param string $name
      * @param string $value
-     * @param array $options
      * @param bool $required
+     * @param array $options
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", array $options = [], bool $required = false, array $classes = [], array $attributes = [])
+    public function __construct(string $name, string $value = "", bool $required = false, array $options = [], array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
         $this->value            = $value;
-        $this->options          = $options;
         $this->required         = $required;
+        $this->options          = $options;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components

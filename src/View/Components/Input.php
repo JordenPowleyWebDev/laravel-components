@@ -29,14 +29,14 @@ class Input extends Component
     public string $value;
 
     /**
-     * @var string|null
-     */
-    public ?string $type;
-
-    /**
      * @var bool
      */
     public bool $required;
+
+    /**
+     * @var string|null
+     */
+    public ?string $type;
 
     /**
      * @var array
@@ -53,17 +53,17 @@ class Input extends Component
      *
      * @param string $name
      * @param string $value
-     * @param string $type
      * @param bool $required
+     * @param string $type
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", string $type = "text", bool $required = false, array $classes = [], array $attributes = [])
+    public function __construct(string $name, string $value = "", bool $required = false, string $type = "text", array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
         $this->value            = $value;
-        $this->type             = $type;
         $this->required         = $required;
+        $this->type             = $type;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components

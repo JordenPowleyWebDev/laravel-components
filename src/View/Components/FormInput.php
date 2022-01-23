@@ -21,7 +21,17 @@ class FormInput extends Component
     /**
      * @var string
      */
+    public string $name;
+
+    /**
+     * @var string
+     */
     public string $label;
+
+    /**
+     * @var string
+     */
+    public string $value;
 
     /**
      * @var bool
@@ -29,13 +39,14 @@ class FormInput extends Component
     public bool $required;
 
     /**
-     * @var string|null
+     * @var string
      */
     public ?string $type;
+
     /**
-     * @var array|null
+     * @var string|null
      */
-    public ?array $classes;
+    public ?string $description;
 
     /**
      * @var array
@@ -43,19 +54,31 @@ class FormInput extends Component
     public array $inputAttributes;
 
     /**
+     * @var array|null
+     */
+    public ?array $classes;
+
+    /**
      * FormInput::__construct()
      *
+     * @param string $name
      * @param string $label
+     * @param string $value
      * @param bool $required
-     * @param string|null $type
+     * @param string $type
+     * @param string|null $description
+     * @param array $inputAttributes
      * @param array $classes
      */
-    public function __construct(string $label, bool $required = false, string $type = null, array $classes = [],  array $attributes = [])
+    public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $inputAttributes = [], array $classes = [])
     {
+        $this->name             = $name;
         $this->label            = $label;
+        $this->value            = $value;
         $this->required         = $required;
         $this->type             = $type;
-        $this->inputAttributes  = $attributes;
+        $this->description      = $description;
+        $this->inputAttributes  = $inputAttributes;
 
         // Construct the classes for the components
         $this->classes = [];
