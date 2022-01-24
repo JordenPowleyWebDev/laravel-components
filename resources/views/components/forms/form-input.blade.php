@@ -1,11 +1,14 @@
 <div class="{{ $classes['container'] }}">
     @if (isset($label) && filled($label))
         <x-{{ config('laravel-components.views-namespace') }}-form-label
-            :label="{{ $label }}"
-            :name="{{ $name }}"
-            :type="{{ $type }}"
-            :required="{{ $required }}"
-            :classes="{{ $classes['label-component'] ?? [] }}"
+                name="Test_name"
+                label="Test Label"
+                type="text"
+{{--            :label="{{ $label }}"--}}
+{{--            :name="{{ $name }}"--}}
+{{--            :type="{{ $type }}"--}}
+{{--            :required="{{ $required }}"--}}
+{{--            :classes="{{ $classes['label-component'] ?? [] }}"--}}
         />
     @endif
 {{--    @if (isset($description) && filled($description))--}}
