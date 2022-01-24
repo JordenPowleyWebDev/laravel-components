@@ -24,9 +24,9 @@ class FormBasicInput extends Component
     public ?string $name = null;
 
     /**
-     * @var string|null
+     * @var string
      */
-    public ?string $value = null;
+    public string $value = "";
 
     /**
      * @var bool

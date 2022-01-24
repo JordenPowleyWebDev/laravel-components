@@ -19,34 +19,34 @@ use function view;
 class FormSelect extends Component
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public string $name;
+    public ?string $name = null;
 
     /**
      * @var string
      */
-    public string $value;
+    public string $value = "";
 
     /**
      * @var bool
      */
-    public bool $required;
+    public bool $required = false;
 
     /**
      * @var array
      */
-    public array $options;
+    public array $options = [];
 
     /**
      * @var array
      */
-    public array $classes;
+    public array $classes = [];
 
     /**
      * @var array
      */
-    public array $inputAttributes;
+    public array $inputAttributes = [];
 
     /**
      * FormSelect::__construct()

@@ -19,36 +19,43 @@ use function view;
 class FormFile extends Component
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public string $name;
+    public ?string $name = null;
+
+    /**
+     * @var bool
+     */
+    public bool $required = false;
 
     /**
      * @var array|null
      */
-    public ?array $button;
+    public ?array $button = null;
 
     /**
      * @var array
      */
-    public array $classes;
+    public array $classes = [];
 
     /**
      * @var array
      */
-    public array $inputAttributes;
+    public array $inputAttributes = [];
 
     /**
      * FormFile::__construct()
      *
      * @param string $name
+     * @param bool $required
      * @param array|null $button
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, array $button = null, array $classes = [], array $attributes = [])
+    public function __construct(string $name, bool $required = false, array $button = null, array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
+        $this->required         = $required;
         $this->button           = $button;
         $this->inputAttributes  = $attributes;
 
