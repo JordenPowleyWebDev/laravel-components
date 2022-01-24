@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,10 +13,9 @@ use function filled;
 use function view;
 
 /**
- * Class Select
- * @package JordenPowleyWebDev\LaravelComponents\View\Components
+ * Class File
  */
-class Select extends Component
+class File extends Component
 {
     /**
      * @var string|null
@@ -24,19 +23,14 @@ class Select extends Component
     public ?string $name = null;
 
     /**
-     * @var string
-     */
-    public string $value = "";
-
-    /**
      * @var bool
      */
     public bool $required = false;
 
     /**
-     * @var array
+     * @var array|null
      */
-    public array $options = [];
+    public ?array $button = null;
 
     /**
      * @var array
@@ -49,28 +43,26 @@ class Select extends Component
     public array $inputAttributes = [];
 
     /**
-     * Select::__construct()
+     * File::__construct()
      *
      * @param string $name
-     * @param string $value
      * @param bool $required
-     * @param array $options
+     * @param array|null $button
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", bool $required = false, array $options = [], array $classes = [], array $attributes = [])
+    public function __construct(string $name, bool $required = false, array $button = null, array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
-        $this->value            = $value;
         $this->required         = $required;
-        $this->options          = $options;
+        $this->button           = $button;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-select-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.select.'.$item);
+        foreach (['container', 'input', 'label-container', 'label-icon', 'label-text'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-file-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.file.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -79,12 +71,12 @@ class Select extends Component
     }
 
     /**
-     * Select::render()
+     * File::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.select');
+        return view('laravel-components::components.forms.inputs.file');
     }
 }

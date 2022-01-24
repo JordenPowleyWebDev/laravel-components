@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -14,7 +14,6 @@ use function view;
 
 /**
  * Class Textarea
- * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
 class Textarea extends Component
 {

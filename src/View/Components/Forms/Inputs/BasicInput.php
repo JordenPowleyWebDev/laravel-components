@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -14,9 +14,8 @@ use function view;
 
 /**
  * Class BasicInput
- * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class BasicInput extends Component
+class BasicInput extends Component implements InputInterface
 {
     /**
      * @var string|null
@@ -86,5 +85,15 @@ class BasicInput extends Component
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
         return view('laravel-components::components.forms.inputs.basic-input');
+    }
+
+    public static function processClasses(array $classes = []): array
+    {
+        // TODO: Implement processClasses() method.
+    }
+
+    public static function processAttributes(array $attributes = []): ?array
+    {
+        // TODO: Implement processAttributes() method.
     }
 }
