@@ -66,24 +66,24 @@ class LaravelComponentsServiceProvider extends ServiceProvider
 
         // Load in View Components
         $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
-            Test::class,
-            Button::class,
+            'test'              => Test::class,
+            'button'            => Button::class,
 
-            Card::class,
-            CardData::class,
-            CardHeader::class,
+            'card'              => Card::class,
+            'card-data'         => CardData::class,
+            'card-header'       => CardHeader::class,
 
-            DropdownMenu::class,
-            DropdownItem::class,
-            DropdownDivider::class,
+            'dropdown-menu'     => DropdownMenu::class,
+            'dropdown-item'     => DropdownItem::class,
+            'dropdown-divider'  => DropdownDivider::class,
 
-            FormBasicInput::class,
-            FormSelect::class,
-            FormFile::class,
-            FormTextarea::class,
-            FormLabel::class,
-            FormError::class,
-            FormInput::class,
+            'form-basic-input'  => FormBasicInput::class,
+            'form-select'       => FormSelect::class,
+            'form-file'         => FormFile::class,
+            'form-textarea'     => FormTextarea::class,
+            'form-label'        => FormLabel::class,
+            'form-error'        => FormError::class,
+            'form-input'        => FormInput::class,
         ]);
 
         // Load Layout Views
