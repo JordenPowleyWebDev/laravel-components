@@ -80,16 +80,16 @@ class FormInput extends Component
 //        $this->description      = $description;
 //        $this->inputAttributes  = $inputAttributes;
 //
-//        // Construct the classes for the components
-//        $this->classes = [];
-//        foreach (['container', 'description', 'input-container'] as $item) {
-//            $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
-//            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.form-input.'.$item);
-//
-//            if (array_key_exists($item, $classes) && filled($classes[$item])) {
-//                $this->classes[$item] .= " ".$classes[$item];
-//            }
-//        }
+        // Construct the classes for the components
+        $this->classes = [];
+        foreach (['container', 'description', 'input-container'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.form-input.'.$item);
+
+            if (array_key_exists($item, $classes) && filled($classes[$item])) {
+                $this->classes[$item] .= " ".$classes[$item];
+            }
+        }
 //
 //        if ($this->required) {
 //            $this->classes['container'] = $this->classes['container'].' required';

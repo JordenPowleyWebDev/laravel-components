@@ -1,4 +1,4 @@
-{{--<div class="{{ $classes['container'] }}">--}}
+<div class="{{ $classes['container'] }}">
 {{--    @if (isset($label) && filled($label))--}}
 {{--        <x-{{ config('laravel-components.views-namespace') }}-form-label--}}
 {{--            :label="{{ $label }}"--}}
@@ -63,7 +63,4 @@
 {{--            :classes="{{ $classes['error-component'] }}"--}}
 {{--        />--}}
 {{--    @enderror--}}
-{{--</div>--}}
-<div>
-        here
 </div>
