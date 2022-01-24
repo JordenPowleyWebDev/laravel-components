@@ -1,6 +1,6 @@
 <div class="{{ $classes['container'] }}">
     @if (isset($label) && filled($label))
-        <x-form-label
+        <x-{{ config('laravel-components.views-namespace') }}-form-label
             :label="{{ $label }}"
             :name="{{ $name }}"
             :type="{{ $type }}"
