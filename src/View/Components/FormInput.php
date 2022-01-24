@@ -72,14 +72,14 @@ class FormInput extends Component
      */
     public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
     {
-//        $this->name             = $name;
-//        $this->label            = $label;
-//        $this->value            = $value;
-//        $this->required         = $required;
-//        $this->type             = $type;
-//        $this->description      = $description;
-//        $this->inputAttributes  = $inputAttributes;
-//
+        $this->name             = $name;
+        $this->label            = $label;
+        $this->value            = $value;
+        $this->required         = $required;
+        $this->type             = $type;
+        $this->description      = $description;
+        $this->inputAttributes  = $inputAttributes;
+
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'description', 'input-container'] as $item) {
@@ -90,10 +90,10 @@ class FormInput extends Component
                 $this->classes[$item] .= " ".$classes[$item];
             }
         }
-//
-//        if ($this->required) {
-//            $this->classes['container'] = $this->classes['container'].' required';
-//        }
+
+        if ($this->required) {
+            $this->classes['container'] = $this->classes['container'].' required';
+        }
     }
 
     /**
