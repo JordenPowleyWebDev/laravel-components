@@ -19,34 +19,34 @@ use function view;
 class FormBasicInput extends Component
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public string $name;
-
-    /**
-     * @var string
-     */
-    public string $value;
-
-    /**
-     * @var bool
-     */
-    public bool $required;
+    public ?string $name = null;
 
     /**
      * @var string|null
      */
-    public ?string $type;
+    public ?string $value = null;
+
+    /**
+     * @var bool
+     */
+    public bool $required = false;
+
+    /**
+     * @var string|null
+     */
+    public ?string $type = null;
 
     /**
      * @var array
      */
-    public array $classes;
+    public array $classes = [];
 
     /**
      * @var array
      */
-    public array $inputAttributes;
+    public array $inputAttributes = [];
 
     public function __construct()
     {
