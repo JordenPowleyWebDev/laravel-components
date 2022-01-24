@@ -84,7 +84,7 @@ class FormInput extends Component
         $this->classes = [];
         foreach (['container', 'description', 'input-container'] as $item) {
             $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.label.'.$item);
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.form-input.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
