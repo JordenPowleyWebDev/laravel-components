@@ -2,6 +2,7 @@
 
 namespace JordenPowleyWebDev\LaravelComponents;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Button;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Card;
