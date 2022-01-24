@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class FormTextarea
+ * Class BasicInput
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class FormTextarea extends Component
+class BasicInput extends Component
 {
     /**
      * @var string|null
@@ -34,6 +34,11 @@ class FormTextarea extends Component
     public bool $required = false;
 
     /**
+     * @var string
+     */
+    public string $type = "text";
+
+    /**
      * @var array
      */
     public array $classes = [];
@@ -44,26 +49,28 @@ class FormTextarea extends Component
     public array $inputAttributes = [];
 
     /**
-     * FormTextarea::__construct()
+     * BasicInput::__construct()
      *
      * @param string $name
      * @param string $value
      * @param bool $required
+     * @param string $type
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", bool $required = false, array $classes = [], array $attributes = [])
+    public function __construct(string $name, string $value = "", bool $required = false, string $type = "text", array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
         $this->value            = $value;
         $this->required         = $required;
+        $this->type             = $type;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-textarea-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.textarea.'.$item);
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-input-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.input.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -72,12 +79,12 @@ class FormTextarea extends Component
     }
 
     /**
-     * FormTextarea::render()
+     * BasicInput::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.textarea');
+        return view('laravel-components::components.forms.inputs.basic-input');
     }
 }

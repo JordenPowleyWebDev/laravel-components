@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class FormFile
+ * Class Select
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class FormFile extends Component
+class Select extends Component
 {
     /**
      * @var string|null
@@ -24,14 +24,19 @@ class FormFile extends Component
     public ?string $name = null;
 
     /**
+     * @var string
+     */
+    public string $value = "";
+
+    /**
      * @var bool
      */
     public bool $required = false;
 
     /**
-     * @var array|null
+     * @var array
      */
-    public ?array $button = null;
+    public array $options = [];
 
     /**
      * @var array
@@ -44,26 +49,28 @@ class FormFile extends Component
     public array $inputAttributes = [];
 
     /**
-     * FormFile::__construct()
+     * Select::__construct()
      *
      * @param string $name
+     * @param string $value
      * @param bool $required
-     * @param array|null $button
+     * @param array $options
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, bool $required = false, array $button = null, array $classes = [], array $attributes = [])
+    public function __construct(string $name, string $value = "", bool $required = false, array $options = [], array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
+        $this->value            = $value;
         $this->required         = $required;
-        $this->button           = $button;
+        $this->options          = $options;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'input', 'label-container', 'label-icon', 'label-text'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-file-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.file.'.$item);
+        foreach (['container'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-select-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.select.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -72,12 +79,12 @@ class FormFile extends Component
     }
 
     /**
-     * FormFile::render()
+     * Select::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.file');
+        return view('laravel-components::components.forms.inputs.select');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class FormError
+ * Class Error
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class FormError extends Component
+class Error extends Component
 {
     /**
      * @var string
@@ -29,7 +29,7 @@ class FormError extends Component
     public ?array $classes;
 
     /**
-     * FormError::__construct()
+     * Error::__construct()
      *
      * @param string $error
      * @param array $classes
@@ -51,7 +51,7 @@ class FormError extends Component
     }
 
     /**
-     * FormError::render()
+     * Error::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */

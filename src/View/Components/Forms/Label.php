@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class FormLabel
+ * Class Label
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class FormLabel extends Component
+class Label extends Component
 {
     /**
      * @var string
@@ -44,7 +44,7 @@ class FormLabel extends Component
     public ?array $classes;
 
     /**
-     * FormLabel::__construct()
+     * Label::__construct()
      *
      * @param string $name
      * @param string $label
@@ -76,7 +76,7 @@ class FormLabel extends Component
     }
 
     /**
-     * FormLabel::render()
+     * Label::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class FormInput
+ * Class Input
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class FormInput extends Component
+class Input extends Component
 {
     /**
      * @var string|null
@@ -59,7 +59,7 @@ class FormInput extends Component
     public array $classes = [];
 
     /**
-     * FormInput::__construct()
+     * Input::__construct()
      *
      * @param string $name
      * @param string $label
@@ -72,6 +72,13 @@ class FormInput extends Component
      */
     public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
     {
+        /**
+         * Create Interface For All Form Input Components:
+         * Process Classes
+         * Process Attributes
+         * Process Default Values
+         */
+
         $this->name             = $name;
         $this->label            = $label;
         $this->value            = $value;
@@ -97,7 +104,7 @@ class FormInput extends Component
     }
 
     /**
-     * FormInput::render()
+     * Input::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */

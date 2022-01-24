@@ -2,7 +2,6 @@
 
 namespace JordenPowleyWebDev\LaravelComponents;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Button;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Card;
@@ -11,14 +10,14 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\CardHeader;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownDivider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownItem;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownMenu;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormFile;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormError;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormInput;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormLabel;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormBasicInput;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormSelect;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\BasicInput as FormBasicInput;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Error as FormError;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\File as FormFile;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Input as FormInput;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Label as FormLabel;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Select as FormSelect;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Textarea as FormTextarea;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
-use JordenPowleyWebDev\LaravelComponents\View\Components\FormTextarea;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
 {
