@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class Textarea
+ * Class FormBasicInput
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class Textarea extends Component
+class FormBasicInput extends Component
 {
     /**
      * @var string
@@ -34,6 +34,11 @@ class Textarea extends Component
     public bool $required;
 
     /**
+     * @var string|null
+     */
+    public ?string $type;
+
+    /**
      * @var array
      */
     public array $classes;
@@ -44,26 +49,28 @@ class Textarea extends Component
     public array $inputAttributes;
 
     /**
-     * Textarea::__construct()
+     * FormBasicInput::__construct()
      *
      * @param string $name
      * @param string $value
      * @param bool $required
+     * @param string $type
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", bool $required = false, array $classes = [], array $attributes = [])
+    public function __construct(string $name, string $value = "", bool $required = false, string $type = "text", array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
         $this->value            = $value;
         $this->required         = $required;
+        $this->type             = $type;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-textarea-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.textarea.'.$item);
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-input-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.input.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -72,12 +79,12 @@ class Textarea extends Component
     }
 
     /**
-     * Textarea::render()
+     * FormBasicInput::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.textarea');
+        return view('laravel-components::components.forms.inputs.basic-input');
     }
 }

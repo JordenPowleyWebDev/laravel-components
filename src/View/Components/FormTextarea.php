@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class Select
+ * Class FormTextarea
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class Select extends Component
+class FormTextarea extends Component
 {
     /**
      * @var string
@@ -36,11 +36,6 @@ class Select extends Component
     /**
      * @var array
      */
-    public array $options;
-
-    /**
-     * @var array
-     */
     public array $classes;
 
     /**
@@ -49,28 +44,26 @@ class Select extends Component
     public array $inputAttributes;
 
     /**
-     * Select::__construct()
+     * FormTextarea::__construct()
      *
      * @param string $name
      * @param string $value
      * @param bool $required
-     * @param array $options
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", bool $required = false, array $options = [], array $classes = [], array $attributes = [])
+    public function __construct(string $name, string $value = "", bool $required = false, array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
         $this->value            = $value;
         $this->required         = $required;
-        $this->options          = $options;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-select-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.select.'.$item);
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-textarea-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.textarea.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -79,12 +72,12 @@ class Select extends Component
     }
 
     /**
-     * Select::render()
+     * FormTextarea::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.select');
+        return view('laravel-components::components.forms.inputs.textarea');
     }
 }

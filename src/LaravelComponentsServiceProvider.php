@@ -10,14 +10,14 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\CardHeader;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownDivider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownItem;
 use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownMenu;
-use JordenPowleyWebDev\LaravelComponents\View\Components\File;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormFile;
 use JordenPowleyWebDev\LaravelComponents\View\Components\FormError;
 use JordenPowleyWebDev\LaravelComponents\View\Components\FormInput;
 use JordenPowleyWebDev\LaravelComponents\View\Components\FormLabel;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Input;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Select;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormBasicInput;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormSelect;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Textarea;
+use JordenPowleyWebDev\LaravelComponents\View\Components\FormTextarea;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
 {
@@ -77,10 +77,10 @@ class LaravelComponentsServiceProvider extends ServiceProvider
             DropdownItem::class,
             DropdownDivider::class,
 
-            Input::class,
-            Select::class,
-            File::class,
-            Textarea::class,
+            FormBasicInput::class,
+            FormSelect::class,
+            FormFile::class,
+            FormTextarea::class,
             FormLabel::class,
             FormError::class,
             FormInput::class,

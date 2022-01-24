@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class Input
+ * Class FormFile
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class Input extends Component
+class FormFile extends Component
 {
     /**
      * @var string
@@ -24,19 +24,9 @@ class Input extends Component
     public string $name;
 
     /**
-     * @var string
+     * @var array|null
      */
-    public string $value;
-
-    /**
-     * @var bool
-     */
-    public bool $required;
-
-    /**
-     * @var string|null
-     */
-    public ?string $type;
+    public ?array $button;
 
     /**
      * @var array
@@ -49,28 +39,24 @@ class Input extends Component
     public array $inputAttributes;
 
     /**
-     * Input::__construct()
+     * FormFile::__construct()
      *
      * @param string $name
-     * @param string $value
-     * @param bool $required
-     * @param string $type
+     * @param array|null $button
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", bool $required = false, string $type = "text", array $classes = [], array $attributes = [])
+    public function __construct(string $name, array $button = null, array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
-        $this->value            = $value;
-        $this->required         = $required;
-        $this->type             = $type;
+        $this->button           = $button;
         $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-input-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.input.'.$item);
+        foreach (['container', 'input', 'label-container', 'label-icon', 'label-text'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-file-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.file.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -79,12 +65,12 @@ class Input extends Component
     }
 
     /**
-     * Input::render()
+     * FormFile::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.input');
+        return view('laravel-components::components.forms.inputs.file');
     }
 }
