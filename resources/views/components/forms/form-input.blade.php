@@ -15,7 +15,7 @@
     @endif
     <div class="{{ $classes['input-container'] }}">
         @if (isset($type) && filled($type) && $type === "select")
-            <x-input
+            <x-form-select
                 :name="{{ $name ?? "" }}"
                 :value="{{ $value ?? "" }}"
                 :required="{{ $required ?? false }}"
@@ -24,14 +24,14 @@
                 :attributes="{{ array_key_exists('attributes', $inputAttributes) && filled($inputAttributes['attributes']) ? $inputAttributes['attributes'] : [] }}"
             />
         @elseif (isset($type) && filled($type) && $type === "file")
-            <x-file
+            <x-form-file
                 :name="{{ $name ?? "" }}"
                 :button="{{ array_key_exists('button', $inputAttributes) && filled($inputAttributes['button']) ? $inputAttributes['button'] : [] }}"
                 :classes="{{ array_key_exists('classes', $inputAttributes) && filled($inputAttributes['classes']) ? $inputAttributes['classes'] : [] }}"
                 :attributes="{{ array_key_exists('attributes', $inputAttributes) && filled($inputAttributes['attributes']) ? $inputAttributes['attributes'] : [] }}"
             />
         @elseif (isset($type) && filled($type) && $type === "textarea")
-            <x-textarea
+            <x-form-textarea
                 :name="{{ $name ?? "" }}"
                 :value="{{ $value ?? "" }}"
                 :required="{{ $required ?? false }}"
@@ -47,7 +47,7 @@
         @elseif (isset($type) && filled($type) && $type === "image-uploader")
             {{-- TODO - Include Image Uploader React Component --}}
         @else
-            <x-input
+            <x-basic-input
                 :name="{{ $name ?? "" }}"
                 :value="{{ $value ?? "" }}"
                 :required="{{ $required ?? false }}"

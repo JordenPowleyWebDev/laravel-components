@@ -48,7 +48,7 @@ return [
                     'input-container'   => 'position-relative',
                 ],
                 'label'         => [
-                    'container'     => 'mb-1 user-select-none',
+                    'container'     => 'mb-1 user-select-none fw-bold',
                 ],
                 'inputs'        => [
                     'input'   => [
