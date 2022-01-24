@@ -82,7 +82,7 @@ class FormInput extends Component
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'description', 'input-container', 'label-component'] as $item) {
+        foreach (['container', 'description', 'input-container', 'label-component', 'input-component', 'error-component'] as $item) {
             $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.form-input.'.$item);
 
