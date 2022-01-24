@@ -48,6 +48,11 @@ class FormBasicInput extends Component
      */
     public array $inputAttributes;
 
+    public function __construct()
+    {
+
+    }
+
     /**
      * FormBasicInput::__construct()
      *
@@ -58,25 +63,25 @@ class FormBasicInput extends Component
      * @param array $classes
      * @param array $attributes
      */
-    public function __construct(string $name, string $value = "", bool $required = false, string $type = "text", array $classes = [], array $attributes = [])
-    {
-        $this->name             = $name;
-        $this->value            = $value;
-        $this->required         = $required;
-        $this->type             = $type;
-        $this->inputAttributes  = $attributes;
-
-        // Construct the classes for the components
-        $this->classes = [];
-        foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-input-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.input.'.$item);
-
-            if (array_key_exists($item, $classes) && filled($classes[$item])) {
-                $this->classes[$item] .= " ".$classes[$item];
-            }
-        }
-    }
+//    public function __construct(string $name, string $value = "", bool $required = false, string $type = "text", array $classes = [], array $attributes = [])
+//    {
+//        $this->name             = $name;
+//        $this->value            = $value;
+//        $this->required         = $required;
+//        $this->type             = $type;
+//        $this->inputAttributes  = $attributes;
+//
+//        // Construct the classes for the components
+//        $this->classes = [];
+//        foreach (['container'] as $item) {
+//            $itemClass = config('laravel-components.views-namespace')."-form-inputs-input-".$item;
+//            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.input.'.$item);
+//
+//            if (array_key_exists($item, $classes) && filled($classes[$item])) {
+//                $this->classes[$item] .= " ".$classes[$item];
+//            }
+//        }
+//    }
 
     /**
      * FormBasicInput::render()
@@ -85,6 +90,7 @@ class FormBasicInput extends Component
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.forms.inputs.basic-input');
+        return view('laravel-components::components.forms.inputs.test');
+//        return view('laravel-components::components.forms.inputs.basic-input');
     }
 }
