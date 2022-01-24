@@ -19,44 +19,44 @@ use function view;
 class FormInput extends Component
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public string $name;
+    public ?string $name = null;
 
     /**
      * @var string
      */
-    public string $label;
+    public string $label = "";
 
     /**
      * @var string
      */
-    public string $value;
+    public string $value = "";
 
     /**
      * @var bool
      */
-    public bool $required;
+    public bool $required = false;
 
     /**
      * @var string
      */
-    public ?string $type;
+    public string $type = "text";
 
     /**
      * @var string|null
      */
-    public ?string $description;
+    public ?string $description = null;
 
     /**
      * @var array
      */
-    public array $inputAttributes;
+    public array $inputAttributes = [];
 
     /**
-     * @var array|null
+     * @var array
      */
-    public ?array $classes;
+    public array $classes = [];
 
     /**
      * FormInput::__construct()
@@ -67,10 +67,10 @@ class FormInput extends Component
      * @param bool $required
      * @param string $type
      * @param string|null $description
-     * @param array $inputAttributes
      * @param array $classes
+     * @param array $inputAttributes
      */
-    public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $inputAttributes = [], array $classes = [])
+    public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
     {
         $this->name             = $name;
         $this->label            = $label;
