@@ -1,4 +1,4 @@
-<div class="{{ $classes['container'] ?? "mounted" }}">
+{{--<div class="{{ $classes['container'] ?? "mounted" }}">--}}
 {{--    @if (isset($labelComponent) && filled($labelComponent))--}}
 {{--        @include(config('laravel-components.views-namespace').'::components.forms.label', $labelComponent)--}}
 {{--    @endif--}}
@@ -16,4 +16,7 @@
 {{--            'classes'   => $errorComponent['classes'],--}}
 {{--        ])--}}
 {{--    @enderror--}}
+{{--</div>--}}
+<div>
+    HERE
 </div>

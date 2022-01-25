@@ -23,9 +23,9 @@ use function view;
 class Input extends Component
 {
     /**
-     * @var string|null
+     * @var string
      */
-    public ?string $name = null;
+    public string $name = "";
 
     /**
      * @var string
@@ -94,7 +94,7 @@ class Input extends Component
      * @param array $classes
      * @param array $inputAttributes
      */
-    public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
+    public function __construct(string $name = "", string $label = "", string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
     {
 //        $this->name             = $name;
 //        $this->label            = $label;
