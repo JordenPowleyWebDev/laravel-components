@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\FormInterface;
 use function config;
 use function filled;
 use function view;
@@ -15,7 +16,7 @@ use function view;
 /**
  * Class File
  */
-class File extends Component
+class File extends Component implements FormInterface
 {
     /**
      * @var string|null
@@ -56,18 +57,8 @@ class File extends Component
         $this->name             = $name;
         $this->required         = $required;
         $this->button           = $button;
-        $this->inputAttributes  = $attributes;
-
-        // Construct the classes for the components
-        $this->classes = [];
-        foreach (['container', 'input', 'label-container', 'label-icon', 'label-text'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-inputs-file-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.file.'.$item);
-
-            if (array_key_exists($item, $classes) && filled($classes[$item])) {
-                $this->classes[$item] .= " ".$classes[$item];
-            }
-        }
+        $this->classes          = self::processClasses($classes);
+        $this->inputAttributes  = self::processAttributes($attributes);
     }
 
     /**
@@ -78,5 +69,37 @@ class File extends Component
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
         return view('laravel-components::components.forms.inputs.file');
+    }
+
+    /**
+     * File::processClasses()
+     *
+     * @param array $classes
+     * @return array
+     */
+    public static function processClasses(array $classes = []): array
+    {
+        $processedClasses = [];
+        foreach (['container', 'input', 'label-container', 'label-icon', 'label-text'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-inputs-file-".$item;
+            $processedClasses[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.inputs.file.'.$item);
+
+            if (array_key_exists($item, $classes) && filled($classes[$item])) {
+                $processedClasses[$item] .= " ".$classes[$item];
+            }
+        }
+
+        return $processedClasses;
+    }
+
+    /**
+     * File::processAttributes()
+     *
+     * @param array $attributes
+     * @return array|null
+     */
+    public static function processAttributes(array $attributes = []): ?array
+    {
+        return $attributes;
     }
 }

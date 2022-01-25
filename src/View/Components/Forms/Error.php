@@ -16,7 +16,7 @@ use function view;
  * Class Error
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class Error extends Component
+class Error extends Component implements FormInterface
 {
     /**
      * @var string
@@ -36,18 +36,8 @@ class Error extends Component
      */
     public function __construct(string $error, array $classes = [])
     {
-        $this->error = $error;
-
-        // Construct the classes for the components
-        $this->classes = [];
-        foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-error-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.error.'.$item);
-
-            if (array_key_exists($item, $classes) && filled($classes[$item])) {
-                $this->classes[$item] .= " ".$classes[$item];
-            }
-        }
+        $this->error    = $error;
+        $this->classes  = self::processClasses($classes);
     }
 
     /**
@@ -58,5 +48,37 @@ class Error extends Component
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
         return view('laravel-components::components.forms.error');
+    }
+
+    /**
+     * Error::processClasses()
+     *
+     * @param array $classes
+     * @return array
+     */
+    public static function processClasses(array $classes = []): array
+    {
+        $processedClasses = [];
+        foreach (['container'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-error-".$item;
+            $processedClasses[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.error.'.$item);
+
+            if (array_key_exists($item, $classes) && filled($classes[$item])) {
+                $processedClasses[$item] .= " ".$classes[$item];
+            }
+        }
+
+        return $processedClasses;
+    }
+
+    /**
+     * Error::processAttributes()
+     *
+     * @param array $attributes
+     * @return array|null
+     */
+    public static function processAttributes(array $attributes = []): ?array
+    {
+        return [];
     }
 }

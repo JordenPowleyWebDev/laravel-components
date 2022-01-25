@@ -1,14 +1,14 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Forms;
 
 /**
- * Interface::InputInterface
+ * Interface::FormInterface
  */
-interface InputInterface
+interface FormInterface
 {
     /**
-     * InputInterface::processClasses()
+     * FormInterface::processClasses()
      *
      * @param array $classes
      * @return array
@@ -16,7 +16,7 @@ interface InputInterface
     public static function processClasses(array $classes = []) : array;
 
     /**
-     * InputInterface::processAttributes()
+     * FormInterface::processAttributes()
      *
      * @param array $attributes
      * @return array|null

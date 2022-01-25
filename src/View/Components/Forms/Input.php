@@ -8,6 +8,10 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\BasicInput;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\File;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\Select;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\Textarea;
 use function config;
 use function filled;
 use function view;
@@ -59,6 +63,26 @@ class Input extends Component
     public array $classes = [];
 
     /**
+     * @var array|null
+     */
+    public ?array $labelComponent = null;
+
+    /**
+     * @var string
+     */
+    public string $inputComponentName = "";
+
+    /**
+     * @var array|null
+     */
+    public ?array $inputComponent = null;
+
+    /**
+     * @var array|null
+     */
+    public ?array $errorComponent = null;
+
+    /**
      * Input::__construct()
      *
      * @param string $name
@@ -101,6 +125,68 @@ class Input extends Component
         if ($this->required) {
             $this->classes['container'] = $this->classes['container'].' required';
         }
+
+        if (filled($this->label)) {
+            $this->labelComponent = [
+                "name"      => $this->name,
+                "label"     => $this->label,
+                "required"  => $this->required,
+                "type"      => $this->type,
+                "classes"   => Label::processClasses($classes['label-component'] ?? [], $this->required),
+            ];
+        }
+
+        if (isset($type) && filled($type) && $type === "select") {
+            $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.select';
+            $this->inputComponent       = [
+                'name'          => $this->name,
+                'value'         => $this->value,
+                'required'      => $this->required,
+                'options'       => array_key_exists('options', $inputAttributes) && filled($inputAttributes['options']) ? $inputAttributes['options'] : [],
+                'classes'       => Select::processClasses($classes['input-component'] ?? []),
+                'attributes'    => Select::processAttributes($inputAttributes['attributes'] ?? []),
+            ];
+        } else if (isset($type) && filled($type) && $type === "file") {
+            $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.file';
+            $this->inputComponent       = [
+                'name'          => $this->name,
+                'button'        => array_key_exists('button', $inputAttributes) && filled($inputAttributes['button']) ? $inputAttributes['button'] : [],
+                'required'      => $this->required,
+                'classes'       => File::processClasses($classes['input-component'] ?? []),
+                'attributes'    => File::processAttributes($inputAttributes['attributes'] ?? []),
+            ];
+        } else if (isset($type) && filled($type) && $type === "textarea") {
+            $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.textarea';
+            $this->inputComponent       = [
+                'name'          => $this->name,
+                'value'         => $this->value,
+                'required'      => $this->required,
+                'classes'       => Textarea::processClasses($classes['input-component'] ?? []),
+                'attributes'    => Textarea::processAttributes($inputAttributes['attributes'] ?? []),
+            ];
+        } else if (isset($type) && filled($type) && $type === "date") {
+            // TODO - Construct Date Attributes
+        } else if (isset($type) && filled($type) && $type === "searchable-select") {
+            // TODO - Construct Searchable Select Attributes
+        } else if (isset($type) && filled($type) && $type === "file-uploader") {
+            // TODO - Construct File Uploader Attributes
+        } else if (isset($type) && filled($type) && $type === "image-uploader") {
+            // TODO - Construct Image Uploader Attributes
+        } else {
+            $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.basic-input';
+            $this->inputComponent       = [
+                'name'          => $this->name,
+                'value'         => $this->value,
+                'required'      => $this->required,
+                'type'          => $this->type ?? "text",
+                'classes'       => BasicInput::processClasses($classes['input-component'] ?? []),
+                'attributes'    => BasicInput::processAttributes($inputAttributes['attributes'] ?? []),
+            ];
+        }
+
+        $this->errorComponent = [
+            'classes' => Error::processClasses($classes['error-component'] ?? []),
+        ];
     }
 
     /**

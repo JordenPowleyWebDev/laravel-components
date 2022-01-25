@@ -16,7 +16,7 @@ use function view;
  * Class Label
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class Label extends Component
+class Label extends Component implements FormInterface
 {
     /**
      * @var string
@@ -58,21 +58,7 @@ class Label extends Component
         $this->label    = $label;
         $this->required = $required;
         $this->type     = $type;
-
-        // Construct the classes for the components
-        $this->classes = [];
-        foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.label.'.$item);
-
-            if (array_key_exists($item, $classes) && filled($classes[$item])) {
-                $this->classes[$item] .= " ".$classes[$item];
-            }
-        }
-
-        if ($this->required) {
-            $this->classes['container'] = $this->classes['container'].' required';
-        }
+        $this->classes  = self::processClasses($classes);
     }
 
     /**
@@ -83,5 +69,42 @@ class Label extends Component
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
         return view('laravel-components::components.forms.label');
+    }
+
+    /**
+     * Label::processClasses()
+     *
+     * @param array $classes
+     * @param bool $required
+     * @return array
+     */
+    public static function processClasses(array $classes = [], bool $required = false): array
+    {
+        $processedClasses = [];
+        foreach (['container'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
+            $processedClasses[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.label.'.$item);
+
+            if (array_key_exists($item, $classes) && filled($classes[$item])) {
+                $processedClasses[$item] .= " ".$classes[$item];
+            }
+        }
+
+        if ($required) {
+            $processedClasses['container'] = $processedClasses['container'].' required';
+        }
+
+        return $processedClasses;
+    }
+
+    /**
+     * Label::processAttributes()
+     *
+     * @param array $attributes
+     * @return array|null
+     */
+    public static function processAttributes(array $attributes = []): ?array
+    {
+        return [];
     }
 }
