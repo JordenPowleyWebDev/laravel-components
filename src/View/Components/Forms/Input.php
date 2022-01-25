@@ -96,13 +96,6 @@ class Input extends Component
      */
     public function __construct(string $name, string $label, string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
     {
-        /**
-         * Create Interface For All Form Input Components:
-         * Process Classes
-         * Process Attributes
-         * Process Default Values
-         */
-
         $this->name             = $name;
         $this->label            = $label;
         $this->value            = $value;
@@ -113,7 +106,7 @@ class Input extends Component
 
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'description', 'input-container', 'label-component', 'input-component', 'error-component'] as $item) {
+        foreach (['container', 'description', 'input-container'] as $item) {
             $itemClass = config('laravel-components.views-namespace')."-form-label-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.form.form-input.'.$item);
 
@@ -126,15 +119,15 @@ class Input extends Component
             $this->classes['container'] = $this->classes['container'].' required';
         }
 
-        if (filled($this->label)) {
-            $this->labelComponent = [
-                "name"      => $this->name,
-                "label"     => $this->label,
-                "required"  => $this->required,
-                "type"      => $this->type,
-                "classes"   => Label::processClasses($classes['label-component'] ?? [], $this->required),
-            ];
-        }
+//        if (filled($this->label)) {
+//            $this->labelComponent = [
+//                "name"      => $this->name,
+//                "label"     => $this->label,
+//                "required"  => $this->required,
+//                "type"      => $this->type,
+//                "classes"   => Label::processClasses($classes['label-component'] ?? [], $this->required),
+//            ];
+//        }
 
 //        if (isset($type) && filled($type) && $type === "select") {
 //            $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.select';

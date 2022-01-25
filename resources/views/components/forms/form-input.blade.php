@@ -1,7 +1,7 @@
 <div class="{{ $classes['container'] ?? "" }}">
-    @if (isset($labelComponent) && filled($labelComponent))
-        @include(config('laravel-components.views-namespace').'::components.forms.label', $labelComponent)
-    @endif
+{{--    @if (isset($labelComponent) && filled($labelComponent))--}}
+{{--        @include(config('laravel-components.views-namespace').'::components.forms.label', $labelComponent)--}}
+{{--    @endif--}}
 {{--    @if (isset($description) && filled($description))--}}
 {{--        <div class="{{ $classes['description'] ?? "" }}">--}}
 {{--            {{ $description }}--}}
