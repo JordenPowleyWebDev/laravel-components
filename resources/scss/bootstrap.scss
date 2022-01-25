@@ -10,3 +10,9 @@
   user-select: none;
 }
 
+.form-group label.required {
+  &::after {
+    color: red;
+    content: "*";
+  }
+}

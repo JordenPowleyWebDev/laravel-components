@@ -43,7 +43,7 @@ return [
             ],
             'form'          => [
                 'form-input'    => [
-                    'container'         => 'form-group',
+                    'container'         => 'form-group mb-2',
                     'description'       => 'w-100 mb-2',
                     'input-container'   => 'position-relative',
                 ],

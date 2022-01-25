@@ -87,14 +87,14 @@ class Input extends Component
      *
      * @param string $name
      * @param string $label
-     * @param string $value
+     * @param $value
      * @param bool $required
      * @param string $type
      * @param string|null $description
      * @param array $classes
      * @param array $inputAttributes
      */
-    public function __construct(string $name = "", string $label = "", string $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
+    public function __construct(string $name = "", string $label = "", $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
     {
         $this->name             = $name;
         $this->label            = $label;
