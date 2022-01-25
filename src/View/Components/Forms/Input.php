@@ -92,9 +92,9 @@ class Input extends Component
      * @param string $type
      * @param string|null $description
      * @param array $classes
-     * @param array $inputAttributes
+     * @param array $attributes
      */
-    public function __construct(string $name = "", string $label = "", $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [],  array $inputAttributes = [])
+    public function __construct(string $name = "", string $label = "", $value = "", bool $required = false, string $type = 'text', string $description = null, array $classes = [], array $attributes = [])
     {
         $this->name             = $name;
         $this->label            = $label;
@@ -102,7 +102,7 @@ class Input extends Component
         $this->required         = $required;
         $this->type             = $type;
         $this->description      = $description;
-        $this->inputAttributes  = $inputAttributes;
+        $this->inputAttributes  = $attributes;
 
         // Construct the classes for the components
         $this->classes = [];
@@ -132,30 +132,30 @@ class Input extends Component
         if (isset($type) && filled($type) && $type === "select") {
             $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.select';
             $this->inputComponent       = [
-                'name'          => $this->name,
-                'value'         => $this->value,
-                'required'      => $this->required,
-                'options'       => array_key_exists('options', $inputAttributes) && filled($inputAttributes['options']) ? $inputAttributes['options'] : [],
-                'classes'       => Select::processClasses($classes['input-component'] ?? []),
-                'attributes'    => Select::processAttributes($inputAttributes['attributes'] ?? []),
+                'name'              => $this->name,
+                'value'             => $this->value,
+                'required'          => $this->required,
+                'options'           => array_key_exists('options', $this->inputAttributes) && filled($this->inputAttributes['options']) ? $this->inputAttributes['options'] : [],
+                'classes'           => Select::processClasses($classes['input-component'] ?? []),
+                'inputAttributes'   => Select::processAttributes($this->inputAttributes['attributes'] ?? []),
             ];
         } else if (isset($type) && filled($type) && $type === "file") {
             $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.file';
             $this->inputComponent       = [
-                'name'          => $this->name,
-                'button'        => array_key_exists('button', $inputAttributes) && filled($inputAttributes['button']) ? $inputAttributes['button'] : [],
-                'required'      => $this->required,
-                'classes'       => File::processClasses($classes['input-component'] ?? []),
-                'attributes'    => File::processAttributes($inputAttributes['attributes'] ?? []),
+                'name'              => $this->name,
+                'button'            => array_key_exists('button', $this->inputAttributes) && filled($this->inputAttributes['button']) ? $this->inputAttributes['button'] : [],
+                'required'          => $this->required,
+                'classes'           => File::processClasses($classes['input-component'] ?? []),
+                'inputAttributes'   => File::processAttributes($this->inputAttributes['attributes'] ?? []),
             ];
         } else if (isset($type) && filled($type) && $type === "textarea") {
             $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.textarea';
             $this->inputComponent       = [
-                'name'          => $this->name,
-                'value'         => $this->value,
-                'required'      => $this->required,
-                'classes'       => Textarea::processClasses($classes['input-component'] ?? []),
-                'attributes'    => Textarea::processAttributes($inputAttributes['attributes'] ?? []),
+                'name'              => $this->name,
+                'value'             => $this->value,
+                'required'          => $this->required,
+                'classes'           => Textarea::processClasses($classes['input-component'] ?? []),
+                'inputAttributes'   => Textarea::processAttributes($this->inputAttributes['attributes'] ?? []),
             ];
         } else if (isset($type) && filled($type) && $type === "date") {
             // TODO - Construct Date Attributes
@@ -168,12 +168,12 @@ class Input extends Component
         } else {
             $this->inputComponentName   = config('laravel-components.views-namespace').'::components.forms.inputs.basic-input';
             $this->inputComponent       = [
-                'name'          => $this->name,
-                'value'         => $this->value,
-                'required'      => $this->required,
-                'type'          => $this->type ?? "text",
-                'classes'       => BasicInput::processClasses($classes['input-component'] ?? []),
-                'attributes'    => BasicInput::processAttributes($inputAttributes['attributes'] ?? []),
+                'name'              => $this->name,
+                'value'             => $this->value,
+                'required'          => $this->required,
+                'type'              => $this->type ?? "text",
+                'classes'           => BasicInput::processClasses($classes['input-component'] ?? []),
+                'inputAttributes'   => BasicInput::processAttributes($this->inputAttributes['attributes'] ?? []),
             ];
         }
 
