@@ -58,7 +58,7 @@ class Label extends Component implements FormInterface
         $this->label    = $label;
         $this->required = $required;
         $this->type     = $type;
-        $this->classes  = self::processClasses($classes);
+        $this->classes  = self::processClasses($classes, $this->required);
     }
 
     /**
