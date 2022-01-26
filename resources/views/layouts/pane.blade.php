@@ -31,5 +31,6 @@
         </div>
     </div>
 </div>
+@include(config('laravel-components.views-namespace').'::components.toasts')
 </body>
 </html>
