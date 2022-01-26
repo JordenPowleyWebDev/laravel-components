@@ -11299,4 +11299,5 @@ textarea.form-control-lg {
 .form-group label.required::after {
   color: red;
   content: "*";
+  margin-left: 2px;
 }
