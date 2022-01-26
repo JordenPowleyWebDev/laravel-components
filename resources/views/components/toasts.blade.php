@@ -1,3 +1,4 @@
+<div id="toast-container"></div>
 <div>
     @if (session('status'))
         <div class="blade-toast" data-type="info" data-content="{{ json_encode(["messages" => [session('status')]]) }}"></div>
