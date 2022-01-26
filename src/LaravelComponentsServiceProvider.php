@@ -17,6 +17,7 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\File as Fo
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\Select as FormSelect;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\Textarea as FormTextarea;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Label as FormLabel;
+use JordenPowleyWebDev\LaravelComponents\View\Components\PaneCard;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
@@ -69,6 +70,8 @@ class LaravelComponentsServiceProvider extends ServiceProvider
             'test'              => Test::class,
             'button'            => Button::class,
 
+            'pane-card'         => PaneCard::class,
+
             'card'              => Card::class,
             'card-data'         => CardData::class,
             'card-header'       => CardHeader::class,
@@ -85,13 +88,6 @@ class LaravelComponentsServiceProvider extends ServiceProvider
             'form-error'        => FormError::class,
             'form-input'        => FormInput::class,
         ]);
-
-        // Load Layout Views
-//        $this->loadViewComponentsAs(config('laravel-components.views-namespace').'-layout', [
-//            Card::class,
-//            CardData::class,
-//            CardHeader::class,
-//        ]);
 
         // Register the views for the package
         $viewsNamespace = config('laravel-components.views-namespace');

@@ -40,6 +40,10 @@ return [
                     'label'         => 'fw-bold text-dark',
                     'value'         => '',
                 ],
+                'pane-card'     => [
+                    'container'     => 'd-block w-100',
+                    'title'         => 'h2 mb-3 w-100 text-center',
+                ],
             ],
             'form'          => [
                 'form-input'    => [
@@ -76,6 +80,16 @@ return [
                     'container'     => 'invalid-feedback d-block'
                 ],
             ]
+        ],
+        'layouts'       => [
+            'pane'          => [
+                'body'              => '',
+                'app-div-outer'     => 'pane-layout bg-dark',
+                'app-div-inner'     => 'd-flex align-items-center justify-content-center',
+                'app-div-col'       => 'col-10 col-md-8 col-lg-6',
+                'app-name'          => 'h1 text-white w-100 mb-4 text-center',
+                'pane-container'    => 'rounded bg-light p-4',
+            ],
         ],
     ],
 ];
