@@ -1,17 +1,23 @@
 @php
 $classes = "";
+$active = false;
 if (isset($grouped) && $grouped == true) {
     $classes = config('laravel-components.views-namespace')."-navigation-item-container-group ".config('laravel-components.default-classes.layouts.navigation.item.container-group');
 } else {
     $classes = config('laravel-components.views-namespace')."-navigation-item-container ".config('laravel-components.default-classes.layouts.navigation.item.container');
 }
 
+if (isset($activeName) && filled($activeName)) {
+    $active = Str::startsWith(Route::currentRouteName(), $activeName);
+}
+
+
 if (isset($active) && $active === true) {
     $classes = $classes." ".config('laravel-components.views-namespace')."-navigation-item-active ".config('laravel-components.default-classes.layouts.navigation.group.item.active');
 }
 
 @endphp
-<a href="{{ $link }}" class="{{ $classes }}">
+<a href="{{ isset($link) && filled($link) ? $link : route($name) }}" class="{{ $classes }}">
     @if(isset($icon) && filled($icon))
         <i class="{{ $icon }} {{ config('laravel-components.views-namespace')."-navigation-item-icon ".config('laravel-components.default-classes.layouts.navigation.item.icon') }}"></i>
     @elseif(isset($grouped) && $grouped)

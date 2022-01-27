@@ -3,11 +3,12 @@
 return [
     'items' => [
 //        [
-//            "type"      => 'single',
-//            "label"     => '',
-//            "icon"      => '',
-//            "link"      => '',
-//            "active"    => Str::startsWith(Route::currentRouteName(), "."),
+//            "type"          => 'single',
+//            "label"         => '',
+//            "icon"          => '',
+//            "link"          => '',
+//            "name"          => '',
+//            "activeName"    => '',
 //        ],
 //        [
 //            "type"      => 'grouped',
@@ -15,10 +16,11 @@ return [
 //            "icon"      => '',
 //            "items"     => [
 //                [
-//                    "label"     => '',
-//                    "icon"      => '',
-//                    "link"      => '',
-//                    "active"    => Str::startsWith(Route::currentRouteName(), "."),
+//                    "label"         => '',
+//                    "icon"          => '',
+//                    "link"          => '',
+//                    "name"          => '',
+//                    "activeName"    => '',
 //                ]
 //            ]
 //        ],
