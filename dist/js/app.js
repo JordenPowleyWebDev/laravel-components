@@ -9,6 +9,12 @@
 
 __webpack_require__(/*! ./components/Button.jsx */ "./resources/js/components/Button.jsx");
 
+__webpack_require__(/*! ./components/layout/card/Card.jsx */ "./resources/js/components/layout/card/Card.jsx");
+
+__webpack_require__(/*! ./components/layout/card/Data.jsx */ "./resources/js/components/layout/card/Data.jsx");
+
+__webpack_require__(/*! ./components/layout/card/Header.jsx */ "./resources/js/components/layout/card/Header.jsx");
+
 __webpack_require__(/*! ./components/Toast.jsx */ "./resources/js/components/Toast.jsx");
 
 __webpack_require__(/*! ./components/Toasts.jsx */ "./resources/js/components/Toasts.jsx");
@@ -46,15 +52,10 @@ var Button = function Button(props) {
       _props$options = props.options,
       options = _props$options === void 0 ? null : _props$options;
   var nodes = ['container', 'icon', 'label'];
-  var defaultClasses = {
-    container: "btn px-4 font-weight-bold",
-    icon: "mr-2",
-    label: ""
-  };
   var processedClasses = {};
   nodes.forEach(function (node) {
-    var itemClass = "laravel-components-" + node;
-    processedClasses[node] = itemClass + " " + defaultClasses[node];
+    var itemClass = window.laravelComponents['views-namespace'] + "-button-" + node;
+    processedClasses[node] = itemClass + " " + window.laravelComponents['default-classes']['components']['button'][node];
 
     if (!!classes && !!classes[node]) {
       processedClasses[node] += " " + classes[node];
@@ -236,6 +237,150 @@ document.querySelectorAll('.blade-toast').forEach(function (container) {
 
 /***/ }),
 
+/***/ "./resources/js/components/layout/card/Card.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/layout/card/Card.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Card = function Card(props) {
+  var _props$classes = props.classes,
+      classes = _props$classes === void 0 ? {} : _props$classes,
+      _props$children = props.children,
+      children = _props$children === void 0 ? null : _props$children;
+  var nodes = ['container', 'inner'];
+  var processedClasses = {};
+  nodes.forEach(function (node) {
+    var itemClass = window.laravelComponents['views-namespace'] + "-layout-card-" + node;
+    processedClasses[node] = itemClass + " " + window.laravelComponents['default-classes']['components']['layout']['card'][node];
+
+    if (!!classes && !!classes[node]) {
+      processedClasses[node] += " " + classes[node];
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: processedClasses.container,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: processedClasses.inner,
+      children: children
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/card/Data.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/layout/card/Data.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Data = function Data(props) {
+  var _props$classes = props.classes,
+      classes = _props$classes === void 0 ? {} : _props$classes,
+      _props$data = props.data,
+      data = _props$data === void 0 ? [] : _props$data;
+  var nodes = ['container', 'column', 'label', 'value'];
+  var processedClasses = {};
+  nodes.forEach(function (node) {
+    var itemClass = window.laravelComponents['views-namespace'] + "-layout-card-data-" + node;
+    processedClasses[node] = itemClass + " " + window.laravelComponents['default-classes']['components']['layout']['card-data'][node];
+
+    if (!!classes && !!classes[node]) {
+      processedClasses[node] += " " + classes[node];
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: processedClasses.container,
+    children: !!data && data.length > 0 && data.map(function (item, index) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: processedClasses.column,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: processedClasses.label,
+          children: item.label
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: processedClasses.value,
+          children: !!item.value ? item.value : window.laravelComponents['empty-value']
+        })]
+      }, index);
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Data);
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/card/Header.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/layout/card/Header.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Header = function Header(props) {
+  var _props$classes = props.classes,
+      classes = _props$classes === void 0 ? {} : _props$classes,
+      _props$title = props.title,
+      title = _props$title === void 0 ? null : _props$title,
+      _props$children = props.children,
+      children = _props$children === void 0 ? null : _props$children;
+  var nodes = ['container', 'title'];
+  var processedClasses = {};
+  nodes.forEach(function (node) {
+    var itemClass = window.laravelComponents['views-namespace'] + "-layout-card-header-" + node;
+    processedClasses[node] = itemClass + " " + window.laravelComponents['default-classes']['components']['layout']['card-header'][node];
+
+    if (!!classes && !!classes[node]) {
+      processedClasses[node] += " " + classes[node];
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: processedClasses.container,
+    children: [!!title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+      className: processedClasses.title,
+      children: title
+    }), !!children ? children : null]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ }),
+
 /***/ "./node_modules/clsx/dist/clsx.m.js":
 /*!******************************************!*\
   !*** ./node_modules/clsx/dist/clsx.m.js ***!
@@ -291,9 +436,9 @@ function toVal(mix) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.min.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.min.css":
 /*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.min.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.min.css ***!
   \**************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -395,19 +540,6 @@ module.exports = function (cssWithMappingToString) {
 /*!*********************************!*\
   !*** ./resources/scss/app.scss ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/scss/components/button.scss":
-/*!***********************************************!*\
-  !*** ./resources/scss/components/button.scss ***!
-  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -32983,7 +33115,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_ReactToastify_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./ReactToastify.min.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.min.css");
+/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ReactToastify_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ReactToastify.min.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.min.css");
 
             
 
@@ -32992,11 +33124,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_ReactToastify_min_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ReactToastify_min_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_ReactToastify_min_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ReactToastify_min_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -33390,7 +33522,6 @@ module.exports = function (list, options) {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/dist/js/app": 0,
-/******/ 			"dist/scss/components/button": 0,
 /******/ 			"dist/scss/app": 0
 /******/ 		};
 /******/ 		
@@ -33441,9 +33572,8 @@ module.exports = function (list, options) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["dist/scss/components/button","dist/scss/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["dist/scss/components/button","dist/scss/app"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/scss/components/button","dist/scss/app"], () => (__webpack_require__("./resources/scss/components/button.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/scss/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/scss/app"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -59,7 +59,7 @@ class Button extends Component
         // Construct the classes for the components
         $this->classes = [];
         foreach (['container', 'icon', 'label'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-".$item;
+            $itemClass = config('laravel-components.views-namespace')."-button-".$item;
             $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.button.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {

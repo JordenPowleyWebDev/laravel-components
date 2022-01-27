@@ -1,6 +1,4 @@
 {
     "/dist/js/app.js": "/dist/js/app.js",
-    "/dist/js/components/Button.js": "/dist/js/components/Button.js",
-    "/dist/scss/components/button.css": "/dist/scss/components/button.css",
     "/dist/scss/app.css": "/dist/scss/app.css"
 }

@@ -16,16 +16,10 @@ const Button = (props) => {
     } = props;
 
     const nodes = ['container', 'icon', 'label'];
-    const defaultClasses = {
-        container:  "btn px-4 font-weight-bold",
-        icon:       "mr-2",
-        label:      "",
-    }
-
     const processedClasses = {};
     nodes.forEach((node) => {
-        let itemClass = "laravel-components-"+node;
-        processedClasses[node] = itemClass+" "+defaultClasses[node];
+        let itemClass = window.laravelComponents['views-namespace']+"-button-"+node;
+        processedClasses[node] = itemClass+" "+window.laravelComponents['default-classes']['components']['button'][node];
 
         if (!!classes && !!classes[node]) {
             processedClasses[node] += " "+classes[node];

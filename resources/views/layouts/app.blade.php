@@ -11,6 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
+    @include(config('laravel-components.views-namespace').'::layouts.components.configuration')
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->

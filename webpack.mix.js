@@ -18,13 +18,13 @@ const scssFiles = fs.readdirSync('resources/scss/components');
 mix.sass('resources/scss/app.scss', 'dist/scss');
 
 // Compile Individual SCSS Files
-for (let i = 0; i < scssFiles.length; i++) {
-    mix.sass('resources/scss/components/'+scssFiles[i], 'dist/scss/components');
-}
+// for (let i = 0; i < scssFiles.length; i++) {
+//     mix.sass('resources/scss/components/'+scssFiles[i], 'dist/scss/components');
+// }
 
 // Compile Main JS File
 mix.js('resources/js/app.js', 'dist/js')
     .react();
 
-mix.js('resources/js/components/*', 'dist/js/components')
-    .react();
+// mix.js('resources/js/components/*', 'dist/js/components')
+//     .react();

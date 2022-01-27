@@ -33101,15 +33101,10 @@ var Button = function Button(props) {
       _props$options = props.options,
       options = _props$options === void 0 ? null : _props$options;
   var nodes = ['container', 'icon', 'label'];
-  var defaultClasses = {
-    container: "btn px-4 font-weight-bold",
-    icon: "mr-2",
-    label: ""
-  };
   var processedClasses = {};
   nodes.forEach(function (node) {
-    var itemClass = "laravel-components-" + node;
-    processedClasses[node] = itemClass + " " + defaultClasses[node];
+    var itemClass = window.laravelComponents['views-namespace'] + "-button-" + node;
+    processedClasses[node] = itemClass + " " + window.laravelComponents['default-classes']['components']['button'][node];
 
     if (!!classes && !!classes[node]) {
       processedClasses[node] += " " + classes[node];
