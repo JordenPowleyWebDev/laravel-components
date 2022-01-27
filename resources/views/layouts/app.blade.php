@@ -26,7 +26,7 @@
                 @include(config('laravel-components.views-namespace').'::layouts.components.navigation.side-navbar')
             @endif
             <main id="main-container" class="{{ config('laravel-components.views-namespace')."-app-app-div-col ".config('laravel-components.default-classes.layouts.app.app-div-col') }}">
-                @if (config('laravel-components.app-layout-settings.breadcrumbs-enabled') === true)
+                @if (config('laravel-components.app-layout-settings.breadcrumbs.enabled') === true)
                     <div class="{{ config('laravel-components.views-namespace')."-app-app-breadcrumb-container ".config('laravel-components.default-classes.layouts.app.app-breadcrumb-container') }}">
                         {{ Breadcrumbs::render() }}
                     </div>

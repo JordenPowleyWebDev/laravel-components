@@ -1,5 +1,5 @@
 @if (count($breadcrumbs))
-    <a class="{{ config('laravel-components.views-namespace')."-breadcrumbs-previous-link ".config('laravel-components.default-classes.layouts.breadcrumbs.previous-link') }}" href="{{ url()->previous() }}">{{ __('components/admin/controls.back') }}</a>
+    <a class="{{ config('laravel-components.views-namespace')."-breadcrumbs-previous-link ".config('laravel-components.default-classes.layouts.breadcrumbs.previous-link') }}" href="{{ url()->previous() }}">Back</a>
     <span class="{{ config('laravel-components.views-namespace')."-breadcrumbs-previous-chevron-container ".config('laravel-components.default-classes.layouts.breadcrumbs.previous-chevron-container') }}">
         <i class="{{ config('laravel-components.views-namespace')."-breadcrumbs-previous-chevron-item ".config('laravel-components.default-classes.layouts.breadcrumbs.previous-chevron-item') }}"></i>
     </span>
