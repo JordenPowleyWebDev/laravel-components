@@ -1,0 +1,97 @@
+$sidebarWidth: 300px;
+
+#upper-navbar {
+  width: 100%;
+
+  .nav-logo {
+    a {
+      color: $white;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s ease-in;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+#side-navbar {
+  width: $sidebarWidth;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $dark;
+
+  .nav-logo {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      color: $white;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s ease-in;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.nav-group-title {
+  user-select: none;
+}
+
+.nav-item {
+  width: 100%;
+  color: $white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: $dark;
+    text-decoration: none;
+    background-color: $white;
+  }
+
+  &.active {
+    background-color: $primary;
+
+    &:hover {
+      opacity: 0.6;
+      color: $white;
+    }
+  }
+}
+
+#main-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  margin-left: auto !important;
+
+  @include media-breakpoint-up(lg) {
+    width: calc(100% - #{$sidebarWidth});
+  }
+}

@@ -37,10 +37,17 @@ class LaravelComponentsServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            // Make Config File Available To The App
+
+            // Make Config Files Available To The App
             $this->publishes([
                 __DIR__.'/../config/laravel-components.php' => config_path('laravel-components.php'),
             ], 'config');
+            $this->publishes([
+                __DIR__.'/../config/breadcrumbs.php' => config_path('breadcrumbs.php'),
+            ], 'breadcrumbs');
+            $this->publishes([
+                __DIR__.'/../config/navigation.php' => config_path('navigation.php'),
+            ], 'navigation');
 
             // Make SCSS Files Available To The App
             $this->publishes([

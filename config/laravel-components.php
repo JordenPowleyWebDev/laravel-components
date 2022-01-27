@@ -90,6 +90,59 @@ return [
                 'app-name'          => 'h1 text-white w-100 mb-4 text-center',
                 'pane-container'    => 'rounded bg-light p-4',
             ],
+            'app'           => [
+                'body'                      => 'app-layout bg-light',
+                'app-div-outer'             => 'container-fluid m-0 p-0',
+                'app-div-inner'             => 'row m-0',
+                'app-div-col'               => 'm-0 p-3 container-fluid',
+                'app-breadcrumb-container'  => 'd-none d-md-flex w-100 mb-3',
+            ],
+            'breadcrumbs'   => [
+                'previous-link'                 => 'text-secondary fw-bold user-select-none',
+                'previous-chevron-container'    => 'text-secondary px-2',
+                'previous-chevron-item'         => 'fas fa-chevron-right',
+                'breadcrumb-link'               => 'text-dark fw-bold user-select-none',
+                'breadcrumb-chevron-container'  => 'text-dark px-2',
+                'breadcrumb-chevron-item'       => 'fas fa-chevron-right',
+            ],
+            'navigation'    => [
+                'upper-navbar'  => [
+                    'container'             => 'd-block d-lg-none navbar navbar-dark bg-dark m-0 p-0',
+                    'control-container'     => 'd-flex justify-content-between align-items-center p-2 px-3',
+                    'nav-logo'              => 'nav-logo',
+                    'nav-link'              => '',
+                    'toggle-button'         => 'navbar-toggler',
+                    'toggle-button-icon'    => 'navbar-toggler-icon',
+                    'nav-container'         => 'collapse',
+                ],
+                'side-navbar'  => [
+                    'container'         => 'd-none d-lg-block m-0 p-0',
+                    'nav-logo'          => 'nav-logo',
+                    'nav-link'          => '',
+                ],
+                'group'         => [
+                    'container'         => 'my-1',
+                    'title-container'   => 'px-2 mb-1 text-secondary nav-group-title',
+                    'icon'              => 'mr-2',
+                    'title'             => 'fw-bold',
+                ],
+                'item'          => [
+                    'container'         => 'd-block m-0 py-3 px-2 nav-item',
+                    'container-group'   => 'd-block m-0 py-2 px-2 nav-item',
+                    'active'            => 'active',
+                    'icon'              => 'mr-2',
+                    'grouped-icon'      => 'fas fa-square fa-fw mr-2',
+                    'label'             => '',
+                ],
+            ],
         ],
     ],
+    'app-layout-settings'   => [
+        'breadcrumbs'           => [
+            'enabled'               => false,
+        ],
+        'navigation'            => [
+            'enabled'               => false,
+        ],
+    ]
 ];
