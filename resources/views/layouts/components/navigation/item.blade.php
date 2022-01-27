@@ -13,7 +13,7 @@ if (isset($activeName) && filled($activeName)) {
 
 
 if (isset($active) && $active === true) {
-    $classes = $classes." ".config('laravel-components.views-namespace')."-navigation-item-active ".config('laravel-components.default-classes.layouts.navigation.group.item.active');
+    $classes = $classes." ".config('laravel-components.views-namespace')."-navigation-item-active ".config('laravel-components.default-classes.layouts.navigation.item.active');
 }
 
 @endphp
