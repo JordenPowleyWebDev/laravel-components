@@ -10,6 +10,27 @@ return [
                 'icon'              => 'mr-2',
                 'label'             => '',
             ],
+            'data-table'     => [
+                'empty-table'       => [
+                    'container'         => 'w-100 text-center bg-white p-2 rounded user-select-none',
+                    'icon'              => 'text-secondary',
+                ],
+                'filter'            => [
+                    'container'         => 'filter-input',
+                    'label'             => 'm-0 mr-2',
+                    'select'            => 'm-0 p-1 px-2',
+                ],
+                'loading-indicator' => [
+                    'container'         => 'w-100 text-center bg-white p-2 rounded user-select-none',
+                    'icon'              => 'text-secondary',
+                ],
+                'search-input'      => [
+                    'container'         => 'search-input',
+                    'input'             => 'm-0 p-2',
+                    'button'            => 'm-0 p-2',
+                    'button-icon'       => 'fas fa-search fa-fw',
+                ],
+            ],
             'controls'      => [
                 'dropdown'      => [
                     'item'          => [

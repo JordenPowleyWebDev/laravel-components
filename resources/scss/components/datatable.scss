@@ -1,0 +1,234 @@
+.search-input {
+    $searchBoxHeight: 42px;
+    $searchBorderColor: $dark;
+    $searchButtonColor: $dark;
+    $searchBackgroundColor: $white;
+    $searchBorderRadius: $border-radius;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $searchBorderColor;
+    border-radius: $searchBorderRadius;
+    background-color: $searchBackgroundColor;
+
+    @include media-breakpoint-up(md) {
+        max-width: 400px;
+    }
+
+    input {
+        height: $searchBoxHeight;
+        flex: 1;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: $searchBorderRadius;
+        border: 0;
+        font-weight: 200;
+        background-color: $searchBackgroundColor;
+    }
+
+    button {
+        width: $searchBoxHeight;
+        height: $searchBoxHeight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $searchButtonColor;
+        border: 0 solid $searchButtonColor;
+        border-radius: $searchBorderRadius;
+
+        i {
+            color: $white;
+            font-size: 14px;
+        }
+    }
+}
+
+.filter-input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+        width: 50%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: auto;
+    }
+
+    label {
+        width: 25%;
+        color: $dark;
+        font-size: 14px;
+        font-weight: 600;
+
+        @include media-breakpoint-up(lg) {
+            white-space: nowrap;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: auto;
+        }
+    }
+
+    select {
+        width: 75%;
+        height: 42px;
+        color: $dark;
+        font-weight: 300;
+        font-size: 14px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $dark;
+        border-radius: $border-radius;
+        background-color: white;
+
+        @include media-breakpoint-up(lg) {
+            width: auto;
+        }
+    }
+}
+
+.data-table {
+    overflow-x: auto;
+
+    .table {
+        margin-bottom: 1.8rem;
+    }
+
+    .table th {
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    .table thead {
+        background-color: $light;
+
+        th {
+            color: $dark;
+            font-weight: 600;
+            border-width: 1px;
+            border-color: $dark;
+            border-style: solid;
+        }
+    }
+
+    table tbody td {
+        color: $dark;
+
+        a {
+            color: $dark;
+            text-decoration: underline;
+            transition: 0.2s ease-in opacity;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+        padding: 0.75rem 0.5rem;
+    }
+
+    table tr td {
+        vertical-align: middle;
+    }
+
+    table.table.table-striped tbody tr {
+        transition: background-color ease-in 0.3s;
+        background-color: white;
+    }
+
+    .table-striped tbody tr:last-of-type {
+        td {
+            border-bottom: 1px solid $dark;
+        }
+    }
+
+    ul.pagination {
+        justify-content: flex-end;
+        border-radius: 0;
+
+        .page-item {
+            color: $dark;
+            font-weight: 300;
+
+            * {
+                color: $dark;
+                font-weight: 500;
+                border-color: $dark;
+            }
+
+            &:first-of-type {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+
+            &:last-of-type {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+
+            &.disabled {
+                button {
+                    background: transparent;
+                }
+            }
+
+            &.active {
+                button {
+                    color: white;
+                    background-color: $dark;
+                    border-color: $dark;
+                }
+            }
+        }
+    }
+
+    &.vertical-align-cells {
+        tbody tr td {
+            vertical-align: middle;
+        }
+    }
+
+    .table-responsive {
+        overflow-x: initial !important;
+    }
+
+    .data-table-link {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        text-decoration: none !important;
+
+        i {
+            margin-top: 1px;
+        }
+    }
+
+    &#practice-invoice-datatable {
+        table thead tr th:nth-of-type(4) {
+            text-align: right;
+        }
+    }
+
+    .dropdown-toggle {
+        border: 0;
+        background-color: transparent;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    a.text-primary {
+        color: $primary !important;
+        font-weight: 600;
+    }
+}

@@ -10,10 +10,10 @@
   user-select: none;
 }
 
-.form-group label.required {
-  &::after {
-    color: red;
-    content: "*";
-    margin-left: 2px;
-  }
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
 }
