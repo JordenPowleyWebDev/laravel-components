@@ -11300,10 +11300,12 @@ textarea.form-control-lg {
           user-select: none;
 }
 
-.form-group label.required::after {
-  color: red;
-  content: "*";
-  margin-left: 2px;
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
 }
 
 #upper-navbar {
@@ -11403,4 +11405,257 @@ textarea.form-control-lg {
   #main-container {
     width: calc(100% - 300px);
   }
+}
+
+.search-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #212529;
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .search-input {
+    max-width: 400px;
+  }
+}
+.search-input input {
+  height: 42px;
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 0.25rem;
+  border: 0;
+  font-weight: 200;
+  background-color: #fff;
+}
+.search-input button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212529;
+  border: 0 solid #212529;
+  border-radius: 0.25rem;
+}
+.search-input button i {
+  color: #fff;
+  font-size: 14px;
+}
+
+.filter-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .filter-input {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .filter-input {
+    width: auto;
+  }
+}
+.filter-input label {
+  width: 25%;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  .filter-input label {
+    white-space: nowrap;
+  }
+}
+@media (min-width: 992px) {
+  .filter-input label {
+    width: auto;
+  }
+}
+.filter-input select {
+  width: 75%;
+  height: 42px;
+  color: #212529;
+  font-weight: 300;
+  font-size: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #212529;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+@media (min-width: 992px) {
+  .filter-input select {
+    width: auto;
+  }
+}
+
+.data-table {
+  overflow-x: auto;
+}
+.data-table .table {
+  margin-bottom: 1.8rem;
+}
+.data-table .table th {
+  border-top: 0;
+  border-bottom: 0;
+}
+.data-table .table thead {
+  background-color: #f8f9fa;
+}
+.data-table .table thead th {
+  color: #212529;
+  font-weight: 600;
+  border-width: 1px;
+  border-color: #212529;
+  border-style: solid;
+}
+.data-table table tbody td {
+  color: #212529;
+}
+.data-table table tbody td a {
+  color: #212529;
+  text-decoration: underline;
+  transition: 0.2s ease-in opacity;
+}
+.data-table table tbody td a:hover {
+  opacity: 0.6;
+}
+.data-table table th,
+.data-table table td {
+  font-size: 0.9rem;
+  padding: 0.75rem 0.5rem;
+}
+.data-table table tr td {
+  vertical-align: middle;
+}
+.data-table table.table.table-striped tbody tr {
+  transition: background-color ease-in 0.3s;
+  background-color: white;
+}
+.data-table .table-striped tbody tr:last-of-type td {
+  border-bottom: 1px solid #212529;
+}
+.data-table ul.pagination {
+  justify-content: flex-end;
+  border-radius: 0;
+}
+.data-table ul.pagination .page-item {
+  color: #212529;
+  font-weight: 300;
+}
+.data-table ul.pagination .page-item * {
+  color: #212529;
+  font-weight: 500;
+  border-color: #212529;
+}
+.data-table ul.pagination .page-item:first-of-type {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.data-table ul.pagination .page-item:last-of-type {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.data-table ul.pagination .page-item.disabled button {
+  background: transparent;
+}
+.data-table ul.pagination .page-item.active button {
+  color: white;
+  background-color: #212529;
+  border-color: #212529;
+}
+.data-table.vertical-align-cells tbody tr td {
+  vertical-align: middle;
+}
+.data-table .table-responsive {
+  overflow-x: initial !important;
+}
+.data-table .data-table-link {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-decoration: none !important;
+}
+.data-table .data-table-link i {
+  margin-top: 1px;
+}
+.data-table#practice-invoice-datatable table thead tr th:nth-of-type(4) {
+  text-align: right;
+}
+.data-table .dropdown-toggle {
+  border: 0;
+  background-color: transparent;
+}
+.data-table .dropdown-toggle::after {
+  display: none;
+}
+.data-table a.text-primary {
+  color: #3490dc !important;
+  font-weight: 600;
+}
+
+.searchable-select [class$=-control] {
+  border-color: #212529;
+}
+.searchable-select.is-invalid [class$=-control] {
+  border-color: #e3342f;
+}
+
+.form-group label.required::after {
+  color: #e3342f;
+  content: "*";
+  margin-left: 2px;
+}
+
+.datepicker-container .react-datepicker {
+  border-color: #212529;
+}
+.datepicker-container .react-datepicker__header {
+  background-color: #212529;
+  border-color: #212529;
+}
+.datepicker-container .react-datepicker__header .react-datepicker__current-month {
+  display: none;
+}
+.datepicker-container .react-datepicker__header .react-datepicker__day-name {
+  color: #fff;
+}
+.datepicker-container .react-datepicker__navigation .react-datepicker__navigation-icon--previous::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(225deg);
+  border-color: #fff;
+}
+.datepicker-container .react-datepicker__navigation .react-datepicker__navigation-icon--next::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-color: #fff;
+}
+.datepicker-container .react-datepicker__month .react-datepicker__day {
+  color: #212529;
+}
+.datepicker-container .react-datepicker__month .react-datepicker__day.react-datepicker__day--today {
+  color: #212529;
+  background-color: transparent;
+}
+.datepicker-container .react-datepicker__month .react-datepicker__day.react-datepicker__day--selected {
+  color: white;
+  background-color: #212529;
+}
+.datepicker-container .react-datepicker__month .react-datepicker__day.react-datepicker__day--keyboard-selected {
+  color: #212529;
+  background-color: transparent;
+}
+.datepicker-container .react-datepicker__month .react-datepicker__day.react-datepicker__day--disabled {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+.datepicker-container .react-datepicker__close-icon::after {
+  background-color: #212529;
 }
