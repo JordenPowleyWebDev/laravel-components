@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+let DEBOUNCE;
 
-export default function Debounce (func, timeout = 500) {
-    let timer;
-
-    return (...args) => {
-        clearTimeout(timer);
-
-        timer = setTimeout(() => {
-            func.apply(this, args);
-        }, timeout);
-    };
+/**
+ *
+ * Debounce::debounce()
+ *
+ * @param callback
+ * @param timeout
+ */
+export default function debounce (callback, timeout = 500) {
+    clearTimeout(DEBOUNCE);
+    DEBOUNCE = setTimeout(() => {
+        callback()
+    }, timeout);
 }
