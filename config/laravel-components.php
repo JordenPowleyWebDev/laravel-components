@@ -7,7 +7,7 @@ return [
         'components'        => [
             'button'            => [
                 'container'         => 'btn px-4 fw-bold',
-                'icon'              => 'mr-2',
+                'icon'              => 'me-2',
                 'label'             => '',
             ],
             'data-table'     => [
@@ -17,7 +17,7 @@ return [
                 ],
                 'filter'            => [
                     'container'         => 'filter-input',
-                    'label'             => 'm-0 mr-2',
+                    'label'             => 'm-0 me-2',
                     'select'            => 'm-0 p-1 px-2',
                 ],
                 'loading-indicator' => [
@@ -88,7 +88,7 @@ return [
                         'container'         => 'file-input',
                         'input'             => 'm-0 px-2',
                         'label-container'   => 'm-0 p-1 px-3 rounded btn btn-secondary',
-                        'label-icon'        => 'mr-2',
+                        'label-icon'        => 'me-2',
                         'label-text'        => '',
 
                     ],
@@ -144,15 +144,15 @@ return [
                 'group'         => [
                     'container'         => 'my-1',
                     'title-container'   => 'px-2 mb-1 text-secondary nav-group-title',
-                    'icon'              => 'mr-2',
+                    'icon'              => 'me-2',
                     'title'             => 'fw-bold',
                 ],
                 'item'          => [
                     'container'         => 'd-block m-0 py-3 px-2 nav-item',
                     'container-group'   => 'd-block m-0 py-2 px-2 nav-item',
                     'active'            => 'active',
-                    'icon'              => 'mr-2',
-                    'grouped-icon'      => 'fas fa-square fa-fw mr-2',
+                    'icon'              => 'me-2',
+                    'grouped-icon'      => 'fas fa-square fa-fw me-2',
                     'label'             => '',
                 ],
             ],
