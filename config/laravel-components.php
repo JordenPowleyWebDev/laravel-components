@@ -6,7 +6,7 @@ return [
     'default-classes'   => [
         'components'        => [
             'button'            => [
-                'container'         => 'btn px-4 fw-bold',
+                'container'         => 'btn px-4 fw-bold d-flex align-items-center',
                 'icon'              => 'me-2',
                 'label'             => '',
             ],

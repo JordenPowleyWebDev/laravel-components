@@ -95,102 +95,6 @@
 .data-table {
     overflow-x: auto;
 
-    .table {
-        margin-bottom: 1.8rem;
-    }
-
-    .table th {
-        border-top: 0;
-        border-bottom: 0;
-    }
-
-    .table thead {
-        background-color: $light;
-
-        th {
-            color: $secondary;
-            font-weight: 600;
-            border-width: 1px;
-            border-color: $secondary;
-            border-style: solid;
-        }
-    }
-
-    table tbody td {
-        color: $secondary;
-
-        a {
-            color: $secondary;
-            text-decoration: underline;
-            transition: 0.2s ease-in opacity;
-
-            &:hover {
-                opacity: 0.6;
-            }
-        }
-    }
-
-    table th,
-    table td {
-        font-size: 0.9rem;
-        padding: 0.75rem 0.5rem;
-    }
-
-    table tr td {
-        vertical-align: middle;
-    }
-
-    table.table.table-striped tbody tr {
-        transition: background-color ease-in 0.3s;
-        background-color: white;
-    }
-
-    .table-striped tbody tr:last-of-type {
-        td {
-            border-bottom: 1px solid $secondary;
-        }
-    }
-
-    ul.pagination {
-        justify-content: flex-end;
-        border-radius: 0;
-
-        .page-item {
-            color: $secondary;
-            font-weight: 300;
-
-            * {
-                color: $secondary;
-                font-weight: 500;
-                border-color: $secondary;
-            }
-
-            &:first-of-type {
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-            }
-
-            &:last-of-type {
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
-            }
-
-            &.disabled {
-                button {
-                    background: transparent;
-                }
-            }
-
-            &.active {
-                button {
-                    color: white;
-                    background-color: $secondary;
-                    border-color: $secondary;
-                }
-            }
-        }
-    }
-
     &.vertical-align-cells {
         tbody tr td {
             vertical-align: middle;
@@ -201,23 +105,6 @@
         overflow-x: initial !important;
     }
 
-    .data-table-link {
-        display: flex;
-        align-items: center;
-        align-content: center;
-        text-decoration: none !important;
-
-        i {
-            margin-top: 1px;
-        }
-    }
-
-    &#practice-invoice-datatable {
-        table thead tr th:nth-of-type(4) {
-            text-align: right;
-        }
-    }
-
     .dropdown-toggle {
         border: 0;
         background-color: transparent;
@@ -225,10 +112,5 @@
         &::after {
             display: none;
         }
-    }
-
-    a.text-primary {
-        color: $primary !important;
-        font-weight: 600;
     }
 }
