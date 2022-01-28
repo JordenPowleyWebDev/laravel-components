@@ -11407,12 +11407,15 @@ textarea.form-control-lg {
   }
 }
 
+.laravel-components-button-container {
+  min-height: 42px;
+}
 .search-input {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #212529;
+  border: 1px solid #6c757d;
   border-radius: 0.25rem;
   background-color: #fff;
 }
@@ -11422,7 +11425,7 @@ textarea.form-control-lg {
   }
 }
 .search-input input {
-  height: 42px;
+  min-height: 42px;
   flex: 1;
   padding-left: 10px;
   padding-right: 10px;
@@ -11437,8 +11440,8 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212529;
-  border: 0 solid #212529;
+  background-color: #6c757d;
+  border: 0 solid #6c757d;
   border-radius: 0.25rem;
 }
 .search-input button i {
@@ -11464,7 +11467,7 @@ textarea.form-control-lg {
 }
 .filter-input label {
   width: 25%;
-  color: #212529;
+  color: #6c757d;
   font-size: 14px;
   font-weight: 600;
 }
@@ -11481,12 +11484,12 @@ textarea.form-control-lg {
 .filter-input select {
   width: 75%;
   height: 42px;
-  color: #212529;
+  color: #6c757d;
   font-weight: 300;
   font-size: 14px;
   border-style: solid;
   border-width: 1px;
-  border-color: #212529;
+  border-color: #6c757d;
   border-radius: 0.25rem;
   background-color: white;
 }
@@ -11510,17 +11513,17 @@ textarea.form-control-lg {
   background-color: #f8f9fa;
 }
 .data-table .table thead th {
-  color: #212529;
+  color: #6c757d;
   font-weight: 600;
   border-width: 1px;
-  border-color: #212529;
+  border-color: #6c757d;
   border-style: solid;
 }
 .data-table table tbody td {
-  color: #212529;
+  color: #6c757d;
 }
 .data-table table tbody td a {
-  color: #212529;
+  color: #6c757d;
   text-decoration: underline;
   transition: 0.2s ease-in opacity;
 }
@@ -11540,20 +11543,20 @@ textarea.form-control-lg {
   background-color: white;
 }
 .data-table .table-striped tbody tr:last-of-type td {
-  border-bottom: 1px solid #212529;
+  border-bottom: 1px solid #6c757d;
 }
 .data-table ul.pagination {
   justify-content: flex-end;
   border-radius: 0;
 }
 .data-table ul.pagination .page-item {
-  color: #212529;
+  color: #6c757d;
   font-weight: 300;
 }
 .data-table ul.pagination .page-item * {
-  color: #212529;
+  color: #6c757d;
   font-weight: 500;
-  border-color: #212529;
+  border-color: #6c757d;
 }
 .data-table ul.pagination .page-item:first-of-type {
   border-top-left-radius: 4px;
@@ -11568,8 +11571,8 @@ textarea.form-control-lg {
 }
 .data-table ul.pagination .page-item.active button {
   color: white;
-  background-color: #212529;
-  border-color: #212529;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 .data-table.vertical-align-cells tbody tr td {
   vertical-align: middle;
@@ -11599,6 +11602,10 @@ textarea.form-control-lg {
 .data-table a.text-primary {
   color: #3490dc !important;
   font-weight: 600;
+}
+
+.form-control {
+  min-height: 42px;
 }
 
 .searchable-select [class$=-control] {

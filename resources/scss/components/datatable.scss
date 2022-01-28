@@ -1,7 +1,7 @@
 .search-input {
-    $searchBoxHeight: 42px;
-    $searchBorderColor: $dark;
-    $searchButtonColor: $dark;
+    $searchBoxHeight: $minInputHeight;;
+    $searchBorderColor: $secondary;
+    $searchButtonColor: $secondary;
     $searchBackgroundColor: $white;
     $searchBorderRadius: $border-radius;
 
@@ -18,7 +18,7 @@
     }
 
     input {
-        height: $searchBoxHeight;
+        min-height: $searchBoxHeight;
         flex: 1;
         padding-left: 10px;
         padding-right: 10px;
@@ -61,7 +61,7 @@
 
     label {
         width: 25%;
-        color: $dark;
+        color: $secondary;
         font-size: 14px;
         font-weight: 600;
 
@@ -77,12 +77,12 @@
     select {
         width: 75%;
         height: 42px;
-        color: $dark;
+        color: $secondary;
         font-weight: 300;
         font-size: 14px;
         border-style: solid;
         border-width: 1px;
-        border-color: $dark;
+        border-color: $secondary;
         border-radius: $border-radius;
         background-color: white;
 
@@ -108,19 +108,19 @@
         background-color: $light;
 
         th {
-            color: $dark;
+            color: $secondary;
             font-weight: 600;
             border-width: 1px;
-            border-color: $dark;
+            border-color: $secondary;
             border-style: solid;
         }
     }
 
     table tbody td {
-        color: $dark;
+        color: $secondary;
 
         a {
-            color: $dark;
+            color: $secondary;
             text-decoration: underline;
             transition: 0.2s ease-in opacity;
 
@@ -147,7 +147,7 @@
 
     .table-striped tbody tr:last-of-type {
         td {
-            border-bottom: 1px solid $dark;
+            border-bottom: 1px solid $secondary;
         }
     }
 
@@ -156,13 +156,13 @@
         border-radius: 0;
 
         .page-item {
-            color: $dark;
+            color: $secondary;
             font-weight: 300;
 
             * {
-                color: $dark;
+                color: $secondary;
                 font-weight: 500;
-                border-color: $dark;
+                border-color: $secondary;
             }
 
             &:first-of-type {
@@ -184,8 +184,8 @@
             &.active {
                 button {
                     color: white;
-                    background-color: $dark;
-                    border-color: $dark;
+                    background-color: $secondary;
+                    border-color: $secondary;
                 }
             }
         }

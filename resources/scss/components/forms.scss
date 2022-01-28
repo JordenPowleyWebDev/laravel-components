@@ -1,3 +1,7 @@
+.form-control {
+    min-height: $minInputHeight;
+}
+
 .searchable-select {
     [class$="-control"] {
         border-color: $dark;
