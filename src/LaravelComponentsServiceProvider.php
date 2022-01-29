@@ -4,9 +4,9 @@ namespace JordenPowleyWebDev\LaravelComponents;
 
 use Illuminate\Support\ServiceProvider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Button;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\DropdownDivider;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\DropdownItem;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\DropdownMenu;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Divider;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Item;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Menu;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Error as FormError;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Input as FormInput;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\BasicInput as FormBasicInput;
@@ -83,9 +83,9 @@ class LaravelComponentsServiceProvider extends ServiceProvider
             'card-data'         => CardData::class,
             'card-header'       => CardHeader::class,
 
-            'dropdown-menu'     => DropdownMenu::class,
-            'dropdown-item'     => DropdownItem::class,
-            'dropdown-divider'  => DropdownDivider::class,
+            'dropdown-menu'     => Menu::class,
+            'dropdown-item'     => Item::class,
+            'dropdown-divider'  => Divider::class,
 
             'form-basic-input'  => FormBasicInput::class,
             'form-select'       => FormSelect::class,

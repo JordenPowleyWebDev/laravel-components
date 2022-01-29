@@ -13,10 +13,10 @@ use function filled;
 use function view;
 
 /**
- * Class DropdownItem
+ * Class Item
  * @package JordenPowleyWebDev\LaravelComponents\View\Components\Controls
  */
-class DropdownItem extends Component
+class Item extends Component
 {
     /**
      * @var string
@@ -39,7 +39,7 @@ class DropdownItem extends Component
     public ?array $options;
 
     /**
-     * DropdownItem::__construct()
+     * Item::__construct()
      *
      * @param string $label
      * @param string $href
@@ -65,7 +65,7 @@ class DropdownItem extends Component
     }
 
     /**
-     * DropdownItem::render()
+     * Item::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
