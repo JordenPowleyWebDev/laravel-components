@@ -60,6 +60,22 @@ Options Array Values:
 |----------|------------------------------------|
 | target   | Target attribute value for button  |
 
+### x-laravel-components-dropdown-modal
+
+| Attribute | Required | Values                     |
+|-----------|----------|----------------------------|
+| label     | Yes      | The item label             |
+| modal     | Yes      | The target modal           |
+| classes   | No       | See 'Classes Array Values' |
+| options   | No       | See 'Options Array Values' |
+
+Classes Array Values:
+
+| Key       | Details                         |
+|-----------|---------------------------------|
+| container | Classes for the outer container |
+| label     | Classes for the label           |
+
 ### x-laravel-components-dropdown-divider
 
 | Attribute | Required | Values                     |

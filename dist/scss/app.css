@@ -11578,3 +11578,27 @@ textarea.form-control-lg {
 .datepicker-container .react-datepicker__close-icon::after {
   background-color: #212529;
 }
+
+.bespoke-modal.ReactModal__Content--after-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bespoke-modal.show {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.bespoke-modal.wide-modal {
+  width: 100%;
+  max-width: 900px;
+}
+.bespoke-modal .modal-content {
+  max-height: 95vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.bespoke-modal .modal-content::-webkit-scrollbar {
+  display: none;
+}

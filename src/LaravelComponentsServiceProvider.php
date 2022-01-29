@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Button;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Divider;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Item;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Modal as DropdownModal;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\Menu;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Error as FormError;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Input as FormInput;
@@ -19,6 +20,7 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\CardData;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\CardHeader;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\PaneCard;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Modals\Confirmation as ConfirmationModal;
 
 class LaravelComponentsServiceProvider extends ServiceProvider
 {
@@ -74,26 +76,29 @@ class LaravelComponentsServiceProvider extends ServiceProvider
 
         // Load in View Components
         $this->loadViewComponentsAs(config('laravel-components.views-namespace'), [
-            'test'              => Test::class,
-            'button'            => Button::class,
+            'test'                  => Test::class,
+            'button'                => Button::class,
 
-            'pane-card'         => PaneCard::class,
+            'pane-card'             => PaneCard::class,
 
-            'card'              => Card::class,
-            'card-data'         => CardData::class,
-            'card-header'       => CardHeader::class,
+            'card'                  => Card::class,
+            'card-data'             => CardData::class,
+            'card-header'           => CardHeader::class,
 
-            'dropdown-menu'     => Menu::class,
-            'dropdown-item'     => Item::class,
-            'dropdown-divider'  => Divider::class,
+            'dropdown-menu'         => Menu::class,
+            'dropdown-item'         => Item::class,
+            'dropdown-modal'        => DropdownModal::class,
+            'dropdown-divider'      => Divider::class,
 
-            'form-basic-input'  => FormBasicInput::class,
-            'form-select'       => FormSelect::class,
-            'form-file'         => FormFile::class,
-            'form-textarea'     => FormTextarea::class,
-            'form-label'        => FormLabel::class,
-            'form-error'        => FormError::class,
-            'form-input'        => FormInput::class,
+            'form-basic-input'      => FormBasicInput::class,
+            'form-select'           => FormSelect::class,
+            'form-file'             => FormFile::class,
+            'form-textarea'         => FormTextarea::class,
+            'form-label'            => FormLabel::class,
+            'form-error'            => FormError::class,
+            'form-input'            => FormInput::class,
+
+            'confirmation-modal'    => ConfirmationModal::class,
         ]);
 
         // Register the views for the package

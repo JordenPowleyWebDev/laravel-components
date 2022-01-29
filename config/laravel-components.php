@@ -34,7 +34,11 @@ return [
             'controls'      => [
                 'dropdown'      => [
                     'item'          => [
-                        'container'     => 'dropdown-item',
+                        'container'     => 'dropdown-item cursor-pointer',
+                    ],
+                    'modal'         => [
+                        'container'     => 'dropdown-item cursor-pointer',
+                        'label'         => '',
                     ],
                     'divider'       => [
                         'container'     => 'dropdown-divider'
