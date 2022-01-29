@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Controls;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -8,6 +8,9 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use function config;
+use function filled;
+use function view;
 
 /**
  * Class Button

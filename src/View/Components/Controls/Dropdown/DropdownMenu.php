@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;

@@ -3,13 +3,10 @@
 namespace JordenPowleyWebDev\LaravelComponents;
 
 use Illuminate\Support\ServiceProvider;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Button;
-use JordenPowleyWebDev\LaravelComponents\View\Components\Card;
-use JordenPowleyWebDev\LaravelComponents\View\Components\CardData;
-use JordenPowleyWebDev\LaravelComponents\View\Components\CardHeader;
-use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownDivider;
-use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownItem;
-use JordenPowleyWebDev\LaravelComponents\View\Components\DropdownMenu;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Button;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\DropdownDivider;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\DropdownItem;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Controls\Dropdown\DropdownMenu;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Error as FormError;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Input as FormInput;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\BasicInput as FormBasicInput;
@@ -17,7 +14,10 @@ use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\File as Fo
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\Select as FormSelect;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Inputs\Textarea as FormTextarea;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Forms\Label as FormLabel;
-use JordenPowleyWebDev\LaravelComponents\View\Components\PaneCard;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\Card;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\CardData;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\CardHeader;
+use JordenPowleyWebDev\LaravelComponents\View\Components\Layout\PaneCard;
 use JordenPowleyWebDev\LaravelComponents\View\Components\Test;
 
 class LaravelComponentsServiceProvider extends ServiceProvider

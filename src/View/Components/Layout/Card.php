@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Layout;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,36 +13,28 @@ use function filled;
 use function view;
 
 /**
- * Class CardData
+ * Class Card
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class CardData extends Component
+class Card extends Component
 {
-    /**
-     * @var array
-     */
-    public array $data;
-
     /**
      * @var array|null
      */
     public ?array $classes;
 
     /**
-     * CardData::__construct()
+     * Card::__construct()
      *
-     * @param array $data
      * @param array $classes
      */
-    public function __construct(array $data, array $classes = [])
+    public function __construct(array $classes = [])
     {
-        $this->data = $data;
-
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container', 'column', 'label', 'value'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-layout-card-data-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card-data.'.$item);
+        foreach (['container', 'inner'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-layout-card-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.card.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -51,14 +43,12 @@ class CardData extends Component
     }
 
     /**
-     * CardData::render()
+     * Card::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.layout.card.data', [
-            'data'  => $this->data,
-        ]);
+        return view('laravel-components::components.layout.card.card');
     }
 }

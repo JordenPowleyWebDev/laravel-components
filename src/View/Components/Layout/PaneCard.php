@@ -1,6 +1,6 @@
 <?php
 
-namespace JordenPowleyWebDev\LaravelComponents\View\Components;
+namespace JordenPowleyWebDev\LaravelComponents\View\Components\Layout;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,28 +13,36 @@ use function filled;
 use function view;
 
 /**
- * Class DropdownDivider
+ * Class PaneCard
  * @package JordenPowleyWebDev\LaravelComponents\View\Components
  */
-class DropdownDivider extends Component
+class PaneCard extends Component
 {
+    /**
+     * @var string|null
+     */
+    public ?string $title = null;
+
     /**
      * @var array|null
      */
     public ?array $classes;
 
     /**
-     * DropdownDivider::__construct()
+     * PaneCard::__construct()
      *
+     * @param string|null $title
      * @param array $classes
      */
-    public function __construct(array $classes = [])
+    public function __construct(string $title = null, array $classes = [])
     {
+        $this->title = $title;
+
         // Construct the classes for the components
         $this->classes = [];
-        foreach (['container'] as $item) {
-            $itemClass = config('laravel-components.views-namespace')."-controls-dropdown-divider-".$item;
-            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.controls.dropdown.divider.'.$item);
+        foreach (['container', 'title'] as $item) {
+            $itemClass = config('laravel-components.views-namespace')."-layout-pane-card-".$item;
+            $this->classes[$item] = $itemClass." ".config('laravel-components.default-classes.components.layout.pane-card.'.$item);
 
             if (array_key_exists($item, $classes) && filled($classes[$item])) {
                 $this->classes[$item] .= " ".$classes[$item];
@@ -43,12 +51,12 @@ class DropdownDivider extends Component
     }
 
     /**
-     * DropdownDivider::render()
+     * PaneCard::render()
      *
      * @return Closure|Application|Htmlable|Factory|View|string
      */
     public function render(): View|Factory|Htmlable|string|Closure|Application
     {
-        return view('laravel-components::components.controls.dropdown.divider');
+        return view('laravel-components::components.layout.pane-card');
     }
 }
