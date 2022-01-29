@@ -20,11 +20,12 @@ using the following syntax:
 
 ### Available Components
 
-| Component   | Docs                                                   |
-|-------------|--------------------------------------------------------|
-| Button      | [Blade Button Component](docs/controls/buttons.md)     |
-| Card        | [Blade Card Components](docs/layout/card.md)           |
-| Dropdown    | [Blade Dropdown Components](docs/controls/dropdown.md) |
-| Forms       | [Blade Form Components](docs/forms/forms.md)           |
-| Pane Layout | [Blade Pane Layout](docs/layout/pane.md)               |
-| App Layout  | [Blade App Layout](docs/layout/app.md)                 |
+| Component          | Docs                                                    |
+|--------------------|---------------------------------------------------------|
+| Button             | [Blade Button Component](docs/controls/buttons.md)      |
+| Card               | [Blade Card Components](docs/layout/card.md)            |
+| Dropdown           | [Blade Dropdown Components](docs/controls/dropdown.md)  |
+| Forms              | [Blade Form Components](docs/forms/forms.md)            |
+| Pane Layout        | [Blade Pane Layout](docs/layout/pane.md)                |
+| App Layout         | [Blade App Layout](docs/layout/app.md)                  |
+| Confirmation Modal | [Blade Confirmation Modal](docs/modals/confirmation.md) |

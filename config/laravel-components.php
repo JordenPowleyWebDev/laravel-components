@@ -100,7 +100,22 @@ return [
                 'error'         => [
                     'container'     => 'invalid-feedback d-block'
                 ],
-            ]
+            ],
+            'modals'        => [
+                'confirmation'  => [
+                    'container'             => 'modal bespoke-modal fade',
+                    'modal-dialog'          => 'modal-dialog p-0',
+                    'form'                  => 'w-100',
+                    'modal-content'         => 'modal-content p-4',
+                    'modal-header'          => 'modal-header border-0 m-0 p-0 pb-4',
+                    'modal-title'           => 'modal-title',
+                    'modal-body'            => 'modal-body m-0 mb-3 p-0',
+                    'confirmation-text'     => 'm-0',
+                    'modal-footer'          => 'modal-footer m-0 p-0 pt-3 d-flex justify-content-between align-items-center border-light',
+                    'confirmation-button'   => 'btn btn-primary py-0 px-4 ms-0 py-0 me-4',
+                    'cancel-button'         => 'btn btn-secondary px-4 me-0',
+                ],
+            ],
         ],
         'layouts'       => [
             'pane'          => [

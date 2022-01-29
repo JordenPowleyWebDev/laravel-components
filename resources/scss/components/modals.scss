@@ -1,0 +1,29 @@
+.bespoke-modal {
+    &.ReactModal__Content--after-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.show {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.wide-modal {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .modal-content {
+        max-height: 95vh;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
