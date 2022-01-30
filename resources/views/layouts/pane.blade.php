@@ -32,6 +32,7 @@
         </div>
     </div>
 </div>
+@stack('modals')
 @include(config('laravel-components.views-namespace').'::components.toasts')
 </body>
 </html>
