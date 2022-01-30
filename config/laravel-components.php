@@ -107,6 +107,7 @@ return [
             ],
             'modals'        => [
                 'confirmation'  => [
+                    'react-container'       => 'ReactModal__Content react-modal-outer modal-dialog bespoke-modal',
                     'container'             => 'modal bespoke-modal fade',
                     'modal-dialog'          => 'modal-dialog p-0',
                     'form'                  => 'w-100',

@@ -63,11 +63,6 @@ class Confirmation extends Component
     public ?array $classes;
 
     /**
-     * @var array
-     */
-    public array $inputAttributes = [];
-
-    /**
      * Confirmation::__construct()
      *
      * @param string $id
@@ -78,9 +73,8 @@ class Confirmation extends Component
      * @param string $cancellationButtonText
      * @param string $confirmationButtonText
      * @param array $classes
-     * @param array $attributes
      */
-    public function __construct(string $id, string $action, string $method, string $title, string $confirmationText, string $cancellationButtonText = "Cancel", string $confirmationButtonText = "Confirm", array $classes = [], array $attributes = [])
+    public function __construct(string $id, string $action, string $method, string $title, string $confirmationText, string $cancellationButtonText = "Cancel", string $confirmationButtonText = "Confirm", array $classes = [])
     {
         $this->id                       = $id;
         $this->action                   = $action;
@@ -88,7 +82,6 @@ class Confirmation extends Component
         $this->confirmationText         = $confirmationText;
         $this->cancellationButtonText   = $cancellationButtonText;
         $this->confirmationButtonText   = $confirmationButtonText;
-        $this->inputAttributes          = $attributes;
 
         switch (strtoupper($method)) {
             case 'HEAD':
