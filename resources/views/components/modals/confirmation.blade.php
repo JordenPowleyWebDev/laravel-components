@@ -17,7 +17,7 @@
                     </p>
                 </div>
                 <div class="{{ $classes['modal-footer'] }}">
-                    <button type="button" data-dismiss="modal" class="{{ $classes['cancel-button'] }}">
+                    <button type="button" data-bs-dismiss="modal" class="{{ $classes['cancel-button'] }}">
                         {{ $cancellationButtonText }}
                     </button>
                     <button type="submit" class="{{ $classes['confirmation-button'] }}">
