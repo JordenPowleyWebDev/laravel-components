@@ -18,21 +18,22 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="{{ config('laravel-components.views-namespace')."-pane-body ".config('laravel-components.default-classes.layouts.pane.body') }}">
-<div id="app" class="{{ config('laravel-components.views-namespace')."-pane-app-div-outer ".config('laravel-components.default-classes.layouts.pane.app-div-outer') }}">
-    <div class="{{ config('laravel-components.views-namespace')."-pane-app-div-inner ".config('laravel-components.default-classes.layouts.pane.app-div-inner') }}" style="width: 100%; height: 100vh;">
-        <div class="{{ config('laravel-components.views-namespace')."-pane-app-div-col ".config('laravel-components.default-classes.layouts.pane.app-div-col') }}">
-            <div class="{{ config('laravel-components.views-namespace')."-pane-app-name ".config('laravel-components.default-classes.layouts.pane.app-name') }}">
-                {{ config('app.name', 'Laravel') }}
-            </div>
-            <div class="{{ config('laravel-components.views-namespace')."-pane-pane-container ".config('laravel-components.default-classes.layouts.pane.pane-container') }}">
-                <main>
-                    @yield('content')
-                </main>
+    <div id="app" class="{{ config('laravel-components.views-namespace')."-pane-app-div-outer ".config('laravel-components.default-classes.layouts.pane.app-div-outer') }}">
+        <div class="{{ config('laravel-components.views-namespace')."-pane-app-div-inner ".config('laravel-components.default-classes.layouts.pane.app-div-inner') }}" style="width: 100%; height: 100vh;">
+            <div class="{{ config('laravel-components.views-namespace')."-pane-app-div-col ".config('laravel-components.default-classes.layouts.pane.app-div-col') }}">
+                <div class="{{ config('laravel-components.views-namespace')."-pane-app-name ".config('laravel-components.default-classes.layouts.pane.app-name') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </div>
+                <div class="{{ config('laravel-components.views-namespace')."-pane-pane-container ".config('laravel-components.default-classes.layouts.pane.pane-container') }}">
+                    <main>
+                        @yield('content')
+                    </main>
+                </div>
             </div>
         </div>
     </div>
-</div>
-@stack('modals')
-@include(config('laravel-components.views-namespace').'::components.toasts')
+    @stack('modals')
+    @include(config('laravel-components.views-namespace').'::components.toasts')
+    @stack('scripts')
 </body>
 </html>
