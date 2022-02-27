@@ -28,6 +28,7 @@
   "require": {
     "illuminate/contracts": "^8.78",
     "laravel/framework": "^8.78",
-    "langleyfoxall/laravel-breadcrumbs": "^5.3"
+    "langleyfoxall/laravel-breadcrumbs": "^5.3",
+    "jordenpowleywebdev/laravel-permission-helper": "^1.0"
   }
 }

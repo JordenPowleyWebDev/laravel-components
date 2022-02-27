@@ -17,6 +17,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    @if(config('laravel-components.app-layout-settings.permissions.enabled') === true)
+        <x-laravel-permission-helper-permissions />
+    @endif
+
     @routes
 </head>
 <body id="app" class="{{ config('laravel-components.views-namespace')."-app-body ".config('laravel-components.default-classes.layouts.app.body') }}">

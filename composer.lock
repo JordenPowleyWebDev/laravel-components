@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d9e3df9b31edc2b43038aa836abb14d",
+    "content-hash": "0ab6f6a619963307a8616fb2f161155a",
     "packages": [
         {
             "name": "brick/math",
@@ -551,6 +551,58 @@
                 }
             ],
             "time": "2021-11-21T21:41:47+00:00"
+        },
+        {
+            "name": "jordenpowleywebdev/laravel-permission-helper",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JordenPowleyWebDev/laravel-permission-helper.git",
+                "reference": "1d7fd1d71da44b099f56bcc99b63a60bc4bae3e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JordenPowleyWebDev/laravel-permission-helper/zipball/1d7fd1d71da44b099f56bcc99b63a60bc4bae3e9",
+                "reference": "1d7fd1d71da44b099f56bcc99b63a60bc4bae3e9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.78",
+                "laravel/framework": "^8.78"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JordenPowleyWebDev\\LaravelPermissionHelper\\LaravelPermissionHelperServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JordenPowleyWebDev\\LaravelPermissionHelper\\": "src",
+                    "JordenPowleyWebDev\\LaravelPermissionHelper\\Tests\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jorden Powley",
+                    "email": "jorden.powley.webdev@gmail.com"
+                }
+            ],
+            "description": "In Development - A Laravel Permission Helper Package",
+            "support": {
+                "issues": "https://github.com/JordenPowleyWebDev/laravel-permission-helper/issues",
+                "source": "https://github.com/JordenPowleyWebDev/laravel-permission-helper/tree/1.0.1"
+            },
+            "time": "2022-02-27T17:54:47+00:00"
         },
         {
             "name": "langleyfoxall/laravel-breadcrumbs",

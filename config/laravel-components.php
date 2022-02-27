@@ -182,6 +182,9 @@ return [
         'breadcrumbs'           => [
             'enabled'               => false,
         ],
+        'permissions'           => [
+            'enabled'               => false,
+        ],
         'navigation'            => [
             'enabled'               => false,
         ],
