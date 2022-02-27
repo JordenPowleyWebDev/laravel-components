@@ -9,6 +9,10 @@ return [
 //            "link"          => '',
 //            "name"          => '',
 //            "activeName"    => '',
+//            "can"           => [
+//                "permission"    => '',
+//                "model"         => '',
+//            ],
 //        ],
 //        [
 //            "type"      => 'grouped',
@@ -21,6 +25,10 @@ return [
 //                    "link"          => '',
 //                    "name"          => '',
 //                    "activeName"    => '',
+//                    "can"           => [
+//                        "permission"    => '',
+//                        "model"         => '',
+//                    ],
 //                ]
 //            ]
 //        ],
