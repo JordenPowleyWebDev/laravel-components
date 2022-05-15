@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24b2c4aac3265bf6b432b394b9589903",
+    "content-hash": "003a4d5cdcb9f8e0e7b0defacb630b28",
     "packages": [
         {
             "name": "brick/math",
@@ -625,24 +625,24 @@
         },
         {
             "name": "jordenpowleywebdev/laravel-permission-helper",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JordenPowleyWebDev/laravel-permission-helper.git",
-                "reference": "ab3333a4fc6f3ea0d42b601985782df697e86035"
+                "reference": "6ae5522481fa0afbb31e2b941952c4dc38f45570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JordenPowleyWebDev/laravel-permission-helper/zipball/ab3333a4fc6f3ea0d42b601985782df697e86035",
-                "reference": "ab3333a4fc6f3ea0d42b601985782df697e86035",
+                "url": "https://api.github.com/repos/JordenPowleyWebDev/laravel-permission-helper/zipball/6ae5522481fa0afbb31e2b941952c4dc38f45570",
+                "reference": "6ae5522481fa0afbb31e2b941952c4dc38f45570",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "^9.11",
-                "laravel/framework": "^9.11"
+                "illuminate/contracts": "^8.78|^9.11",
+                "laravel/framework": "^8.78|^9.11"
             },
             "require-dev": {
-                "orchestra/testbench": "^7.4"
+                "orchestra/testbench": "^6.0|^7.4"
             },
             "type": "library",
             "extra": {
@@ -671,9 +671,9 @@
             "description": "In Development - A Laravel Permission Helper Package",
             "support": {
                 "issues": "https://github.com/JordenPowleyWebDev/laravel-permission-helper/issues",
-                "source": "https://github.com/JordenPowleyWebDev/laravel-permission-helper/tree/v1.0.2"
+                "source": "https://github.com/JordenPowleyWebDev/laravel-permission-helper/tree/v1.0.3"
             },
-            "time": "2022-05-14T18:04:09+00:00"
+            "time": "2022-05-15T14:08:33+00:00"
         },
         {
             "name": "langleyfoxall/laravel-breadcrumbs",
