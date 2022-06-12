@@ -51,7 +51,7 @@ const Select = (props) => {
             {...inputAttributes}
         >
             {!!inputAttributes && !!inputAttributes.placeholder && (
-                <option value={}>{inputAttributes.placeholder}</option>
+                <option value={null}>{inputAttributes.placeholder}</option>
             )}
             {!!options && options.length > 0 && options.map((item) => {
                 return (
