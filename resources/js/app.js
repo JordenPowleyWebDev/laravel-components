@@ -5,4 +5,4 @@ require('./components/layout/card/Header.jsx');
 require('./components/Toast.jsx');
 require('./components/Toasts.jsx');
 require('./components/modals/Confirmation.jsx');
-
+require('./components/forms/BladeInput.jsx')
