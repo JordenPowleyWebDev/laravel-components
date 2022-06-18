@@ -16,7 +16,8 @@ const BasicInput = (props) => {
     const processedClasses = {};
     nodes.forEach((node) => {
         let itemClass = window.laravelComponents['views-namespace']+"-form-inputs-input-"+node;
-        processedClasses[node] = itemClass+" "+window.laravelComponents['default-classes']['components']['form']['inputs']['basic-input'][node];
+
+        processedClasses[node] = itemClass+" "+window.laravelComponents['default-classes']['components']['form']['inputs']['input'][node];
 
         if (!!classes && !!classes[node]) {
             processedClasses[node] += " "+classes[node];

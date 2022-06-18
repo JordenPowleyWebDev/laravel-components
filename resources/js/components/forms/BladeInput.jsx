@@ -76,6 +76,7 @@ const BladeInput = (props) => {
             required={processBooleanProp('required')}
             options={processJsonProp('options')}
             isMulti={processBooleanProp('isMulti')}
+            inputAttributes={processJsonProp('inputAttributes')}
         />
     )
 }
