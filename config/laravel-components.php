@@ -2,6 +2,7 @@
 
 return [
     'views-namespace'   => 'laravel-components',
+    'nav-home-name'     => 'login',
     'empty-value'       => '-',
     'default-classes'   => [
         'components'        => [
