@@ -86,7 +86,6 @@ export default BladeInput;
 document.querySelectorAll('.blade-input').forEach(
     (container) => {
         if (container) {
-
             ReactDOM.render(
                 <BladeInput
                     {...container.dataset}

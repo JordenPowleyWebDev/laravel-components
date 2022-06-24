@@ -55,7 +55,12 @@ const Select = (props) => {
             )}
             {!!options && options.length > 0 && options.map((item) => {
                 return (
-                    <option value={item.value}>{stringToTitleCase(item.label)}</option>
+                    <option
+                        key={item.value}
+                        value={item.value}
+                    >
+                        {stringToTitleCase(item.label)}
+                    </option>
                 );
             })}
         </select>

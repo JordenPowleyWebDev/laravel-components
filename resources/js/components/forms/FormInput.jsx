@@ -92,6 +92,7 @@ const FormInput = (props) => {
                 classes={!!classes && !!classes['input-component'] ? classes['input-component'] : []}
                 inputAttributes={!!inputAttributes && !!inputAttributes['attributes'] ? inputAttributes['attributes'] : []}
                 onChange={onChange}
+                type={type}
             />
         );
     }
