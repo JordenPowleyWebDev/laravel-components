@@ -31,7 +31,7 @@ const Textarea = (props) => {
     }
 
     return (
-        <Textarea
+        <textarea
             id={name}
             name={name}
             className={getContainerClasses()}
@@ -39,7 +39,7 @@ const Textarea = (props) => {
             value={value}
             onChange={(event) => onChange(event.target.value)}
             {...inputAttributes}
-        >{value}</Textarea>
+        >{value}</textarea>
     );
 }
 
