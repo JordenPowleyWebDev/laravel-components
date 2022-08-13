@@ -6,7 +6,7 @@ const Data = (props) => {
         data        = []
     } = props;
 
-    const nodes = ['container', 'column', 'label', 'value'];
+    const nodes = ['container', 'column', 'label', 'value', 'link'];
     const processedClasses = {};
     nodes.forEach((node) => {
         let itemClass = window.laravelComponents['views-namespace']+"-layout-card-data-"+node;
@@ -17,12 +17,22 @@ const Data = (props) => {
         }
     });
 
+    const dataValue = (item) => {
+        return !!item.value ? item.value : window.laravelComponents['empty-value'];
+    }
+
     return (
         <div className={processedClasses.container}>
             {!!data && data.length > 0 && data.map((item, index) => (
                 <div className={processedClasses.column} key={index}>
                     <div className={processedClasses.label}>{item.label}</div>
-                    <div className={processedClasses.value}>{!!item.value ? item.value : window.laravelComponents['empty-value']}</div>
+                    <div className={processedClasses.value}>
+                        {!!item.link ? (
+                            <a href={item.link} className={processedClasses.link} target={!!item.target ? item.target : null}>
+                                {dataValue(item)}
+                            </a>
+                        ) : dataValue(item)}
+                    </div>
                 </div>
             ))}
         </div>
