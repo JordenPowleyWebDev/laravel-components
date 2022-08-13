@@ -65,6 +65,7 @@ return [
                     'column'        => 'col-12 col-md-4 col-lg-3 mb-3',
                     'label'         => 'fw-bold text-dark',
                     'value'         => '',
+                    'link'          => 'text-primary'
                 ],
                 'pane-card'     => [
                     'container'     => 'd-block w-100',
