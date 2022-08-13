@@ -6,7 +6,7 @@ const Data = (props) => {
         data        = []
     } = props;
 
-    const nodes = ['container', 'column', 'label', 'value', 'link'];
+    const nodes = ['container', 'column', 'label', 'value', 'href'];
     const processedClasses = {};
     nodes.forEach((node) => {
         let itemClass = window.laravelComponents['views-namespace']+"-layout-card-data-"+node;
@@ -27,8 +27,8 @@ const Data = (props) => {
                 <div className={processedClasses.column} key={index}>
                     <div className={processedClasses.label}>{item.label}</div>
                     <div className={processedClasses.value}>
-                        {!!item.link ? (
-                            <a href={item.link} className={processedClasses.link} target={!!item.target ? item.target : null}>
+                        {!!item.href ? (
+                            <a href={item.href} className={processedClasses.href} target={!!item.target ? item.target : null}>
                                 {dataValue(item)}
                             </a>
                         ) : dataValue(item)}
