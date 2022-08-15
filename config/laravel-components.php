@@ -90,6 +90,11 @@ return [
                         'container'     => 'form-control shadow-none',
                         'invalid'       => 'is-invalid',
                     ],
+                    'date'          => [
+                        'outer'         => 'datepicker-container',
+                        'container'     => 'form-control shadow-none',
+                        'invalid'       => 'is-invalid',
+                    ],
                     'file'          => [
                         'container'         => 'file-input',
                         'input'             => 'm-0 px-2',

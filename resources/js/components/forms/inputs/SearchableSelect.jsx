@@ -59,6 +59,7 @@ const SearchableSelect = (props) => {
 
     return (
         <Select
+            {...inputAttributes}
             id={name}
             name={name}
             className={getContainerClasses()}
@@ -68,7 +69,6 @@ const SearchableSelect = (props) => {
             isDisabled={disabled}
             menuPlacement={'auto'}
             options={options}
-            {...inputAttributes}
          />
     );
 }

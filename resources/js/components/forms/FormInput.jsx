@@ -5,6 +5,7 @@ import Textarea from "./inputs/Textarea";
 import BasicInput from "./inputs/BasicInput";
 import Error from "./Error";
 import SearchableSelect from "./inputs/SearchableSelect";
+import Date from "./inputs/Date";
 
 const FormInput = (props) => {
     const {
@@ -77,7 +78,17 @@ const FormInput = (props) => {
             />
         );
     } else if (!!type && type === "date") {
-        // TODO - Include
+        inputComponent = (
+            <Date
+                name={name}
+                required={required}
+                value={value}
+                options={!!inputAttributes && !!inputAttributes['options'] ? inputAttributes['options'] : []}
+                classes={!!classes && !!classes['input-component'] ? classes['input-component'] : []}
+                inputAttributes={!!inputAttributes && !!inputAttributes['attributes'] ? inputAttributes['attributes'] : []}
+                onChange={onChange}
+            />
+        );
     } else if (!!type && type === "searchable-select") {
         inputComponent = (
             <SearchableSelect
