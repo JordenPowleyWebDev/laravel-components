@@ -4,7 +4,7 @@
             <a href="{{ route(config('laravel-components.nav-home-name')) }}" class="{{ config('laravel-components.views-namespace')."-navigation-upper-navbar-nav-link ".config('laravel-components.default-classes.layouts.navigation.upper-navbar.nav-link') }}">{{ config('app.name') }}</a>
         </div>
         <button class="{{ config('laravel-components.views-namespace')."-navigation-upper-navbar-toggle-button ".config('laravel-components.default-classes.layouts.navigation.upper-navbar.toggle-button') }}" type="button"
-                data-toggle="collapse" data-target="#upper-nav-content"
+                data-bs-toggle="collapse" data-bs-target="#upper-nav-content"
                 aria-controls="upper-nav-content" aria-expanded="false" aria-label="Toggle navigation">
             <span class="{{ config('laravel-components.views-namespace')."-navigation-upper-navbar-toggle-button-icon ".config('laravel-components.default-classes.layouts.navigation.upper-navbar.toggle-button-icon') }}"></span>
         </button>
