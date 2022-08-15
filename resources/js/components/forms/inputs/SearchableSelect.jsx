@@ -17,8 +17,8 @@ const SearchableSelect = (props) => {
     const nodes = ['container'];
     const processedClasses = {};
     nodes.forEach((node) => {
-        let itemClass = window.laravelComponents['views-namespace']+"-form-inputs-select-"+node;
-        processedClasses[node] = itemClass+" "+window.laravelComponents['default-classes']['components']['form']['inputs']['select'][node];
+        let itemClass = window.laravelComponents['views-namespace']+"-form-inputs-searchable-select-"+node;
+        processedClasses[node] = itemClass+" "+window.laravelComponents['default-classes']['components']['form']['inputs']['searchable-select'][node];
 
         if (!!classes && !!classes[node]) {
             processedClasses[node] += " "+classes[node];
@@ -56,6 +56,8 @@ const SearchableSelect = (props) => {
         return "";
     }
 
+    let isMulti = !!inputAttributes && !!inputAttributes.isMulti;
+
 
     return (
         <Select
@@ -64,11 +66,13 @@ const SearchableSelect = (props) => {
             name={name}
             className={getContainerClasses()}
             required={required}
-            value={!!inputAttributes && !!inputAttributes.isMulti ? value : extractValue()}
-            onChange={(item) => onChange(!!inputAttributes && !!inputAttributes.isMulti ? item : item.value)}
+            value={isMulti ? value : extractValue()}
+            onChange={(item) => onChange(isMulti ? item : item.value)}
             isDisabled={disabled}
             menuPlacement={'auto'}
             options={options}
+            isMulti={isMulti}
+            isSearchable={true}
          />
     );
 }
