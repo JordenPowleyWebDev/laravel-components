@@ -90,6 +90,10 @@ return [
                         'container'     => 'form-control shadow-none',
                         'invalid'       => 'is-invalid',
                     ],
+                    'searchable-select' => [
+                        'container'     => 'searchable-select shadow-none',
+                        'invalid'       => 'is-invalid',
+                    ],
                     'date'          => [
                         'outer'         => 'datepicker-container',
                         'container'     => 'form-control shadow-none',
