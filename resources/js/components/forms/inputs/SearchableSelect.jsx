@@ -33,15 +33,6 @@ const SearchableSelect = (props) => {
         return processedClasses + ' ' + window.laravelComponents['default-classes']['components']['form']['inputs']['input']['invalid'];
     }
 
-    const stringToTitleCase = (value) => {
-        return value.replace(
-            /\w\S*/g,
-            (txt) => {
-                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-            }
-        );
-    }
-
     const extractValue = () => {
         if (!value || value === "" || !options || options.length <= 0) {
             return "";
@@ -56,9 +47,6 @@ const SearchableSelect = (props) => {
         return "";
     }
 
-    let isMulti = !!inputAttributes && !!inputAttributes.isMulti;
-
-
     return (
         <Select
             {...inputAttributes}
@@ -66,12 +54,11 @@ const SearchableSelect = (props) => {
             name={name}
             className={getContainerClasses()}
             required={required}
-            value={isMulti ? value : extractValue()}
-            onChange={(item) => onChange(isMulti ? item : item.value)}
+            value={extractValue()}
+            onChange={(item) => onChange(item.value)}
             isDisabled={disabled}
             menuPlacement={'auto'}
             options={options}
-            isMulti={isMulti}
             isSearchable={true}
          />
     );

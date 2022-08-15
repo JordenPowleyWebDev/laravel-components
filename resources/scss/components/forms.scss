@@ -4,7 +4,8 @@
 
 .searchable-select {
     [class$="-control"] {
-        border-color: $dark;
+        height: 42px;
+        border-color: $gray-400;
     }
 
     &.is-invalid {
@@ -24,7 +25,7 @@
 
 .datepicker-container {
     .react-datepicker {
-        border-color: $dark;
+        border-color: $gray-400;
     }
 
     .react-datepicker__header {
@@ -64,7 +65,7 @@
             }
 
             &.react-datepicker__day--selected {
-                color: white;
+                color: $white;
                 background-color: $dark;
             }
 
