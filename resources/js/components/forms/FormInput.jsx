@@ -5,7 +5,7 @@ import Textarea from "./inputs/Textarea";
 import BasicInput from "./inputs/BasicInput";
 import Error from "./Error";
 import SearchableSelect from "./inputs/SearchableSelect";
-import Date from "./inputs/Date";
+import DateInput from "./inputs/DateInput";
 
 const FormInput = (props) => {
     const {
@@ -79,7 +79,7 @@ const FormInput = (props) => {
         );
     } else if (!!type && type === "date") {
         inputComponent = (
-            <Date
+            <DateInput
                 name={name}
                 required={required}
                 value={value}
