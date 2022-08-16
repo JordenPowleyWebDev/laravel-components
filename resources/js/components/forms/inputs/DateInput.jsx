@@ -3,7 +3,7 @@ import {addDays, startOfDay, format, parse} from "date-fns";
 import DatePicker from "react-datepicker";
 import {DATE_FORMATS} from "../../../constants/DateFormats";
 
-const Date = (props) => {
+const DateInput = (props) => {
     const {
         classes         = {},
         name            = '',
@@ -74,4 +74,4 @@ const Date = (props) => {
     );
 }
 
-export default Date;
+export default DateInput;
