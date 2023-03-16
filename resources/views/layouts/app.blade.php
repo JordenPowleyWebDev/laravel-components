@@ -12,10 +12,10 @@
 
     <!-- Scripts -->
     @include(config('laravel-components.views-namespace').'::layouts.components.configuration')
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset(config('laravel-components.js-asset-name')) }}" defer></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset(config('laravel-components.css-asset-name')) }}" rel="stylesheet">
 
     @if(config('laravel-components.app-layout-settings.permissions.enabled') === true)
         <x-laravel-permission-helper-permissions />

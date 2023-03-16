@@ -12,10 +12,10 @@
 
     <!-- Scripts -->
     @include(config('laravel-components.views-namespace').'::layouts.components.configuration')
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset(config('laravel-components.js-asset-name')) }}" defer></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset(config('laravel-components.css-asset-name')) }}" rel="stylesheet">
 </head>
 <body class="{{ config('laravel-components.views-namespace')."-pane-body ".config('laravel-components.default-classes.layouts.pane.body') }}">
     <div id="app" class="{{ config('laravel-components.views-namespace')."-pane-app-div-outer ".config('laravel-components.default-classes.layouts.pane.app-div-outer') }}">

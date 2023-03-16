@@ -2,6 +2,8 @@
 
 return [
     'views-namespace'   => 'laravel-components',
+    'css-asset-name'    => 'css/app.css',
+    'js-asset-name'     => 'js/app.js',
     'nav-home-name'     => 'login',
     'empty-value'       => '-',
     'default-classes'   => [
