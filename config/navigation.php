@@ -15,6 +15,18 @@ return [
 //            ],
 //        ],
 //        [
+//            "type"          => 'single',
+//            "label"         => '',
+//            "icon"          => '',
+//            "link"          => '',
+//            "name"          => '',
+//            "activeName"    => '',
+//            "roles"         => [
+//                "role-one"
+//                "role-two"
+//            ],
+//        ],
+//        [
 //            "type"      => 'grouped',
 //            "label"     => '',
 //            "icon"      => '',
