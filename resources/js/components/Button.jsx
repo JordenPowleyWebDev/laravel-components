@@ -11,8 +11,9 @@ const Button = (props) => {
     const {
         type,
         label,
-        classes = {},
-        options = null,
+        classes     = {},
+        options     = null,
+        disabled    = false,
     } = props;
 
     const nodes = ['container', 'icon', 'label'];
@@ -43,6 +44,7 @@ const Button = (props) => {
             href={href}
             target={target}
             className={processedClasses.container}
+            disabled={disabled}
         >
             {renderIcon()}
             <span className={processedClasses.label}>
@@ -55,6 +57,7 @@ const Button = (props) => {
         <button
             onClick={jQuery('#'+modal).modal('show')}
             className={processedClasses.container}
+            disabled={disabled}
         >
             {renderIcon()}
             <span className={processedClasses.label}>
@@ -68,6 +71,7 @@ const Button = (props) => {
             type="button"
             className={processedClasses.container}
             onClick={onClick}
+            disabled={disabled}
         >
             {renderIcon()}
             <span className={processedClasses.label}>
@@ -81,6 +85,7 @@ const Button = (props) => {
             type="submit"
             className={processedClasses.container}
             form={form}
+            disabled={disabled}
         >
             {renderIcon()}
             <span className={processedClasses.label}>
